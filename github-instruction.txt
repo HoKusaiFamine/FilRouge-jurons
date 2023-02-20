@@ -1,0 +1,32 @@
+1- il faut crée un clés SSH (unique pour chaque pc)
+		pour cela
+
+2-- click droite sur le bureau et clicker git bush pour ouvrire le terminale bush
+3-- il faut copie coller le code en dessus avec votre emaile à la palace du comment
+		ssh-keygen -t ed25519-sk -C "<comment>"
+		(ex : $ ssh-keygen -t ed25519 -C "<thibaut.poulet@outlook.fr>" )
+ aprés faire des entrer jusqu'à avoire une forme de graphique
+
+3- il faut copie le code Sh et pour cela il  sefau juste de copie coller ce code
+	cat ~/.ssh/id_ed25519.pub | clip  (recuperation dans clic droit cole)
+	sinon dans fichier github sur le pc 
+	ensuite la metre dans github (pageweb)
+
+	pour lutilisation d'un branche faire ceci (sinon travailler dans le main)
+		$ git checkout -b jean-baptiste
+
+
+
+4- clone le fichier pc et celui de github (web)
+copier le nom du lien sur le web: aller dans le repertoire a cloner 
+						<>code (code ssh)
+$ git clone git@github.com:Katia1659/DWWM.git
+
+$ git push --set-upstream origin Jean-Baptiste
+
+
+
+git pull
+git add .
+git commit -m "annotation de laction"
+git push
