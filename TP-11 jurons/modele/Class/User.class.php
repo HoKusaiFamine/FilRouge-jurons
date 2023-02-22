@@ -1,5 +1,5 @@
 <?php
-include("../modele/Profil.class.php");
+include("../modele/class/Profil.class.php");
 
 class User extends Personne {
     
