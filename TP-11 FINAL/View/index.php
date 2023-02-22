@@ -14,9 +14,11 @@
     <title>Index</title>
   </head>
   <body>
-  <ul>   
-    <li><img src="assets/Logo-removebg-preview.png" class="img-fluid" ></li>    
-</ul>
+
+  <header class="header">
+  <img src="assets/Logo-removebg-preview.png" class="img-fluid" >
+  </header>
+  
 <?php session_start() ; ?>
     <div class="centreForm">
       <div class="formConnect">
@@ -52,11 +54,7 @@
             </button>
           </div>
         </form>
-        <?php 
-if (isset($_SESSION['email']))
-{
-    echo "Vous êtes connecté en tant que : " . $_SESSION['email'];
-}?>
+        
       </div>
     </div>
     <script

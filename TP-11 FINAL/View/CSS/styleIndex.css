@@ -19,34 +19,41 @@ body{
     justify-content: center;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 17px;
-    overflow: hidden;
-    background: rgb(2,0,36);
+.header{
+    display: flex;
+    align-items: center;
+    height: 150px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
          rgba(21,22,22,0.4234068627450981) 60%, rgba(219,232,235,1) 100%);
 }
 
-li {
-    float: left;
-}
-
-li a {
-    margin-left: 1em;
-    display: block;
+.nosoulign{
+    text-decoration: none;
     color: white;
-    text-align: center;
-    padding: 10px 12px;
-    font-size: 45px;  
+    margin: 1em;
+    font-size: 2.5em;  
 }
 
-.deco {
-    background-color: red;
-    font-size: 50px;
+.nosoulign2{
+    text-decoration: none;
+    color: rgb(3, 28, 255);
+    margin: 1em;
+    font-size: 1.5em;  
 }
 
 .img-fluid{
     height: 135px;
+    margin-right: 1em;
+}
+
+.gauche{
+    width: 15%;
+}
+
+.centre{
+    width: 70%;
+}
+
+.droite{
+    width: 15%;
 }
