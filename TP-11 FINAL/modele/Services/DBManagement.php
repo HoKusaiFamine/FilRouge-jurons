@@ -77,4 +77,27 @@ function deleteStagiraires(array $listStag) : bool {
     return $status;
 }
 
+//**********************************************************************************
+
+//function select mdp/log
+
+function selectLogMdp() : array{
+
+    $host = 'localhost';
+    $dbname = 'boîte_a_jurons';
+    $username = 'root';
+    $password = '';
+      
+    $dsn = "mysql:host=$host;dbname=$dbname"; 
+    // récupérer tous les utilisateurs
+    $sql = "SELECT login,mdp FROM user";
+    
+    $pdo = new PDO($dsn, $username, $password);
+    $stmt = $pdo->query($sql);
+    $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $user;
+    }
+
+
 ?>
