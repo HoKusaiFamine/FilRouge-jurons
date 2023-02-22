@@ -14,13 +14,18 @@
     <title>Index</title>
   </head>
   <body>
+  <ul>   
+    <li><img src="assets/Logo-removebg-preview.png" class="img-fluid" ></li>    
+</ul>
+<?php session_start() ; ?>
     <div class="centreForm">
       <div class="formConnect">
-        <form action="executeConnect.php" method="get">
+        <form action="../Controller/executeConnect.php" method="post">
           <p class="m-3">Connectez vous avec votre login/mdp</p>
 
           <div class="form-outline m-2">
             <input
+              name="loginConnect";
               type="text"
               id="loginConnect"
               class="form-control"
@@ -30,6 +35,7 @@
 
           <div class="form-outline m-2">
             <input
+            name="passwordConnect";
               type="password"
               id="passwordConnect"
               class="form-control"
@@ -39,13 +45,18 @@
 
           <div class="text-center pt-1 pb-1">
             <button
-              class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-              type="button"
+              class="btn btn-primary btn-block fa-lg gradient-custom-2 mt-2 mb-2"
+              type="submit"
             >
               Connection
             </button>
           </div>
         </form>
+        <?php 
+if (isset($_SESSION['email']))
+{
+    echo "Vous êtes connecté en tant que : " . $_SESSION['email'];
+}?>
       </div>
     </div>
     <script
