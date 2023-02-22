@@ -4,9 +4,11 @@ class Profil {
 
     private int $idProfil;
     private $type;
+    private static $count = 1;
 
     public function __construct($type){
         $this -> type = $type;
+        $this ->idProfil = self::$count;
 
     }
 

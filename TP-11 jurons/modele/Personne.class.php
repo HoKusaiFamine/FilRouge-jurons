@@ -5,7 +5,7 @@
     protected int $idPersonne;
     protected string $nom;
     protected string $prenom;
-    protected static $count;
+    protected static $count = 1;
    
 
     public function __construct($nom,$prenom){
