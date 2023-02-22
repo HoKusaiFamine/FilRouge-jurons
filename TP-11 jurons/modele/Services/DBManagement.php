@@ -77,4 +77,11 @@ function deleteStagiraires(array $listStag) : bool {
     return $status;
 }
 
+
+
+
+
+
+//***********************************************************
+
 ?>
