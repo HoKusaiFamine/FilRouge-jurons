@@ -2,17 +2,18 @@
 
 // fonction insert 
 
-function insertStagiaires($nom,$prenom,$login,$mdp,$id_profil):bool{
+function insertStagiaires($nom,$prenom,$login,$mdp,$id_profil,$mail):bool{
     //Chaine de connexion à la base de donnée
     $bdd = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
   
-    $sql = "INSERT INTO user (nom,prenom,login,mdp,id_profil) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO user (nom,prenom,login,mdp,id_profil,mail) VALUES (?,?,?,?,?,?)";
     $stmt= $bdd->prepare($sql);
     $stmt->bindParam(1, $nom);
     $stmt->bindParam(2, $prenom);
     $stmt->bindParam(3, $login);
     $stmt->bindParam(4, $mdp);
     $stmt->bindParam(5, $id_profil);
+    $stmt->bindParam(6, $mail);
     $status = $stmt->execute();
 
     return $status;
@@ -39,6 +40,14 @@ $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 return $user;
 }
+
+
+
+//***********************************************************
+
+
+
+
 function afficheStagiaires() : array{
 
     $host = 'localhost';
@@ -114,6 +123,25 @@ function selectLogMdp() : array{
     $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     return $user;
+    }
+
+
+
+    function controlLogin($login, $mdp) : bool{
+
+        $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
+        $stmt= $pdo->prepare("SELECT * FROM user WHERE login == '$login' and mdp == '$mdp'");
+        // $stmt->execute();
+        $userTab = $stmt->fetchAll();
+        // return $userTab;
+        
+    
+        if ($login == $userTab[0])
+            return true;
+        else 
+            return false;
+
+        
     }
 
 
