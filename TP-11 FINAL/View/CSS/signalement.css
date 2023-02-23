@@ -1,0 +1,25 @@
+.btn-secondary, .submit{
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+}
+.submit {
+    display: flex;
+    margin-left: 35%;
+    margin-top: 50%;
+}
+.card {
+    display:flex;
+    margin-left: 30%;
+    
+    background-image: url("./img/IMG_1765.JPG");
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+li {
+    width: 100%;
+    height: 80%;
+}
+.btn-group{
+    margin: 3%;
+}
