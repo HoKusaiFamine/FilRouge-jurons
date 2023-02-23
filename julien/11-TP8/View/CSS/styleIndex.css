@@ -1,0 +1,20 @@
+body{
+    background-image: url(../assets/p6210157-2.jpg) ;
+    background-size: cover;
+}
+
+.formConnect{
+    font-size: large;
+    border-radius: 3em;
+    margin-top: 8em;
+    width: 30%;
+    background-color: rgb(150, 150, 150);
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.centreForm{
+    display: flex;
+    justify-content: center;
+}
