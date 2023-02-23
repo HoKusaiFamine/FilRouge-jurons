@@ -56,6 +56,21 @@ function balancePersonne ( ){
 }
 
 
+//***********************************************************
+
+function retireInjures ($id_penalite) {
+    $bdd = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $status = false;
+    
+    // $id = $id_penalite;
+    $sql = "DELETE FROM penalite WHERE id_penalite = $id_penalite";
+    $stmt = $bdd-> prepare($sql);
+    $stmt->bindParam(1, $id_penalite);
+    $status = $stmt -> execute();
+    
+    return $status;
+
+}
 
 
 
