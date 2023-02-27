@@ -6,12 +6,14 @@ class User extends Personne {
     private string $login;
     private string $motDePass;
     private Profil $profil;
+    private $mail;
     
-    public function __construct($login,$motDePass,$nom,$prenom,$type){
+    public function __construct($login,$motDePass,$nom,$prenom,$type,$mail){
         parent::__construct($nom,$prenom);
         $this -> login = $login;
         $this -> motDePass = $motDePass;
         $this -> profil = new Profil ($type);
+        $this -> mail = $mail;
     }
 
     /**
@@ -70,6 +72,26 @@ class User extends Personne {
     public function setProfil($profil)
     {
         $this->profil = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of mail
+     */ 
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
+    /**
+     * Set the value of mail
+     *
+     * @return  self
+     */ 
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
 
         return $this;
     }

@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 // fonction insert 
 
 function insertStagiaires($nom,$prenom,$login,$mdp,$id_profil,$mail):bool{
@@ -130,21 +131,19 @@ function selectLogMdp() : array{
     function controlLogin($login, $mdp) : bool{
 
         $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
-        $stmt= $pdo->prepare("SELECT * FROM user WHERE login == '$login' and mdp == '$mdp'");
-        // $stmt->execute();
+        $stmt= $pdo->prepare("SELECT login,mdp, id_user  FROM user WHERE login = '$login' and mdp = '$mdp' ");
+        $stmt->execute();
         $userTab = $stmt->fetchAll();
-        // return $userTab;
-        
+        $_SESSION['connect'] = $userTab;
+        print_r($_SESSION['connect']);
+   if(count($userTab) > 0)
+        return true;
+    else    
+        return false;
     
-        if ($login == $userTab[0])
-            return true;
-        else 
-            return false;
 
-        
+       
     }
 
 
-
-    function selectDette
 ?>

@@ -2,21 +2,23 @@
 include('../modele/Services/DBManagement.php');
 
 
-session_start();
-$_SESSION['user'] = selectLogMdp();
-$log = $_POST['loginConnect'];
+// session_start();
+// // $_SESSION['user'] = selectLogMdp();
+$login = $_POST['loginConnect'];
 $mdp = $_POST['passwordConnect'];
 
-for ($i=0; $i < count($_SESSION['user']); $i++) { 
-    
-    if ($_SESSION['user'][$i]['login'] == $log and $_SESSION['user'][$i]['mdp'] == $mdp) {
-        $_SESSION['log'] = $log;
-        header('location:../View/home.html');
-        exit();
-    }else{
-        header('location:../View/index.php');
-    }
+// $login = "thomas";
+// $mdp = "1245";
+
+if (controlLogin($login,$mdp)){
+    header('location:../View/home.html');
+    //  exit();
+}else {
+    header('location:../View/index.php');
 }
+
+
+// controlLogin($login,$mdp);
 
 
 

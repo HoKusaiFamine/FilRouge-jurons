@@ -1,26 +1,24 @@
 <?php
-include_once("../modele/Services/DBManagement.php");
-include_once("../modele/Services/PenaliteServices.php");
+include_once "../modele/Services/PenaliteServices.php";
+include_once "../modele/Services/DBManagement.php";
 session_start();
- $listeStag = array("Kaouthar",
- "Lucas",
- "Sebastien",
- "Yacoube",
- "Anthony",
- "Alexandre",
- "Jean-Batiste",
- "Gregory",
- "Julien",
- "Thomas",
- "Thibaut",
- "Maksen",
- "Florian",
- "Paul",
- "Batiste");
-  $listePenal = array("Petit", "Gros", "Rot", "Retard");
+// $nom = $_POST["nom"];
+// echo ($_POST["nom"]);
+// $penalite = $_POST["penalite"];
+// echo ($_POST["penalite"]);
+// $quantitéJr = $_POST["quantitéJr"];
+// echo ($_POST["quantitéJr"]);
+// $quantitéRetard = $_POST["quantitéRetard"];
+// echo ($_POST["quantitéRetard"]);
 
-  //$listeStag = selectStagiaires();
-  //$listePenal = selectPenalite();
-  $_SESSION["nom"] = $listeStag;
-  $_SESSION["penalite"] = $listePenal;
-  header("Location: ../View/signalement.php");
+$_SESSION['stag'] = selectStagiaires();
+
+$_SESSION['penalite'] = selectPenalite();
+
+
+print_r($_SESSION['penalite']);
+
+header('Location:../View/signalement.php');
+
+
+// insertPenalite();

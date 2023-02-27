@@ -1,72 +1,85 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link rel="stylesheet" href="CSS/signalement.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="../View/home.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/styleIndex.css" />
+    <link rel="stylesheet" href="signalement.css">
+    <title>page balance</title>
 </head>
-
+<header class="header">
+    <div class="gauche">
+        <img src="assets/Logo-removebg-preview.png" class="img-fluid" >
+    </div>
+    <div class="centre">
+        <a class="nosoulign" href="home.html">Acceuil</a>
+        <a class="nosoulign" href="signalement.php">Signalement</a>
+        <a class="nosoulign" href="../Controller/executeHistorique.php">Historique</a>
+        <a class="nosoulign" href="acceuil.php">Statistique</a>
+    </div>
+    <div class="droite">
+    <a class="nosoulign2" href="../Controller/executeDeco.php">deconection</a>
+    </div>
+  </header>
 <body>
-
+    
   <?php
   session_start();
-  /*$listeStag = array("Kaouthar",
-  "Lucas",
-  "Sebastien",
-  "Yacoube",
-  "Anthony",
-  "Alexandre",
-  "Jean-Batiste",
-  "Gregory",
-  "Julien",
-  "Thomas",
-  "Thibaut",
-  "Maksen",
-  "Florian",
-  "Paul",
-  "Batiste");
-    $listepenalite = */
+  // $listeStag = array("Kaouthar",
+  // "Lucas",
+  // "Sebastien",
+  // "Yacoube",
+  // "Anthony",
+  // "Alexandre",
+  // "Jean-Batiste",
+  // "Gregory",
+  // "Julien",
+  // "Thomas",
+  // "Thibaut",
+  // "Maksen",
+  // "Florian",
+  // "Paul",
+  // "Batiste");
+  
   //print_r($_SESSION["nom"]) ?>
 <div class="card" style="width: 40rem;height: 30rem">
 <div class="card-body">
 
 
-  <form action="../Controller/SignalementReçois.php" method="post">
+  <form action="../Controller/SignalementReçois.php" method="post" class="form">
     <!-- Choix du stagiaire -->
     <div class="btn-group">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-        Choix du Stagiaire
-      </button>
-      <ul class="dropdown-menu">
-        <?php for ($i = 0; $i < count($_SESSION["nom"]); $i++) { ?>
-          <li><input type="radio" class="btn-check" name="nom" id="option1" value=<?php $_SESSION["nom"][$i]; ?>>
-            <label class="btn btn-secondary" for="option1"><?php echo $_SESSION["nom"][$i]; ?>
-            <input type="radio" name="nom" value="<?php echo $_SESSION["nom"][$i]; ?>"></label></td>
-          </li>
-        <?php } ?>
-      </ul>
+    <label class="textorange text-light" for="id">choix stag : </label>
+                <select class="resizeselect" id='prenom' name ='prenom'>
+                    <option selected>Choisir un prenom </option>
 
+                    <?php for ($i=0; $i < count($_SESSION['stag']); $i++) {?>
+
+                    <option value='<?= $_SESSION['stag'][$i]['prenom']?>'><?= $_SESSION['stag'][$i]['prenom']?></option>';
+                <?php }?>
+                </select>
     </div>
 
 
     <!-- CHOIX DE LA PENALITE-->
 
     <div class="btn-group">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
-        Pénalité à signaler
-      </button>
-      <ul class="dropdown-menu">
-        <?php for ($i = 0; $i < count($_SESSION["penalite"]); $i++) { ?>
-          <li>
-            <label class="btn btn-secondary" for=""><?php echo $_SESSION["penalite"][$i]; ?>
-            <input type="radio" name="penalite" value="<?php echo $_SESSION["penalite"][$i]; ?>"></label></td>
-          </li>
-        <?php } ?>
-      </ul>
+    <label class="textorange text-light" for="id">choix stag : </label>
+                <select class="resizeselect" id='prenom' name ='prenom'>
+                    <option selected>Choisir un prenom </option>
+
+                    <?php for ($i=0; $i < count($_SESSION['penalite']); $i++) {?>
+
+                    <option value='<?= $_SESSION['penalite'][$i]['type']?>'><?= $_SESSION['penalite'][$i]['type']?></option>';
+                  <?php }?>
+                </select>
     </div>
 
 
@@ -91,44 +104,11 @@
         </div>
       </ul>
     </div>
-    <input class="btn btn-success submit" type="submit" value="Le signaler sans pitié" />
+    <input class="btn btn-success submit" type="submit" value="Le signaler sans pitié"/>
   </form>
   </div>
 </div>
 
-
-
-  <!--PODIUM des Balances-->
-  <table>
-    <tr>
-      <td><img src="./img/croissant 3.png" alt="">
-      <td> Thibaut</td>
-    </tr>
-    <tr>
-      <td><img src="./img/croissant_argent.png" alt="">
-      <td> Thibaut</td>
-    </tr>
-    <tr>
-      <td><img src="./img/croissant_bronze-removebg-preview 1.png" alt="">
-      <td> Thibaut</td>
-    </tr>
-  </table>
-
-  <!-- SCRIPT-->
-  <!-- <script>
-
-$('input[type="radio"]').click(function(){
-        if($(this).attr("value")== "Petit" ||"Gros"||"Rot"){
-            $(".nbRetard").hide('slow');
-        }
-        if($(this).attr("value")=="Retard"){
-            $(".nbRetard").show('slow');
-
-        }        
-    });
-$('input[type="radio"]').trigger('click');
-</script> -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
 </body>
-
 </html>
