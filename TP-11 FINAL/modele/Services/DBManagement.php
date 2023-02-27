@@ -175,4 +175,13 @@ function selectLogMdp() : array{
         $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $array;
     }
+
+
+//***************************************
+
+
+
+
+
+
 ?>

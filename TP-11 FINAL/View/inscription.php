@@ -14,7 +14,7 @@
     <title>Index</title>
   </head>
   <body>
-
+<!-- <p je suis la ></p> -->
   <header class="header">
   <img src="assets/Logo-removebg-preview.png" class="img-fluid" >
   </header>
@@ -22,37 +22,34 @@
 <?php session_start() ; ?>
     <div class="centreForm">
       <div class="formConnect">
-        <form action="../Controller/executeConnect.php" method="post">
-          <p class="m-3">Connectez vous avec votre login/mdp</p>
-
+        <form action="../Controller/execute.inscription.php" method="POST">
+          <p class="m-3">S'inscrire</p>
           <div class="form-outline m-2">
-            <input
-              name="loginConnect";
-              type="text"
-              id="loginConnect"
-              class="form-control"
-              placeholder="Login"
-            />
+          <input type="text" class="form-control" 
+                name="login" placeholder="Login" required />
           </div>
-
           <div class="form-outline m-2">
-            <input
-            name="passwordConnect";
-              type="password"
-              id="passwordConnect"
-              class="form-control"
-              placeholder="Mot de passe"
-            />
+          <input type="text" class="form-control" 
+                name="username" placeholder="Nom" required />
           </div>
-
+          <div class="form-outline m-2">
+          <input type="text" class="form-control" 
+                name="prenom" placeholder="Prenom" required />
+          </div>
+          <div class="form-outline m-2">
+          <input type="text" class="form-control" name="mail" placeholder="mail" required />
+          </div>
+          <div class="form-outline m-2">
+          <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" required />
+          </div>
           <div class="text-center pt-1 pb-1">
             <button
               class="btn btn-primary btn-block fa-lg gradient-custom-2 mt-2 mb-2"
               type="submit"
             >
-              Connection
+              Inscription
             </button>
-            <p class="box-register">Vous êtes nouveau ici? <a href="inscription.php">S'inscrire</a></p>
+            <p class="box-register">Déjà inscrit? <a href="index.php">Connectez-vous ici</a></p>
           </div>
         </form>
         
