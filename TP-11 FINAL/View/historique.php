@@ -43,7 +43,7 @@
     <tr>
         <th class="rounded-start-2">NOM</th>
         <th class="">PRENOM</th>
-        <th class="">Balance</th>
+        <th class="">ID Balance</th>
         <th class="">Infraction</th>
         <th class="">Montant</th>
         
@@ -53,9 +53,9 @@
 
 <?php for ($i = 0; $i < count($_SESSION['balance_injure']); $i++) {
         echo '<tr class="">';
-        echo '<td class="bg-info-subtle text-dark rounded-start-2 opacity-75">' . $_SESSION['balance_injure'][$i]['nom'] . '</td>';
-        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['balance_injure'][$i]['prenom'] . '</td>';
-        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['balance_injure'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-start-2 opacity-75">' . $_SESSION['balance_injure'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['balance_injure'][$i]['nom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['balance_injure'][$i]['id_user_balance'] . '</td>';
         echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['balance_injure'][$i]['type'] . '</td>';
         echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['balance_injure'][$i]['prix'] .  ' centimes </td>';
         echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['balance_injure'][$i]['date'] . '</td>';
