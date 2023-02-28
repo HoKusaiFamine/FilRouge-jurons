@@ -37,7 +37,7 @@ session_start();
   <div class="card-body">
 
 
-    <form action="../Controller/executeSignalement.php" method="post" class="form">
+    <form action="../Controller/executeBalance.php" method="post" class="form">
       <!-- Choix du stagiaire -->
       <div class="btn-group">
         <label class="textorange text-light" for="id" class = "menu">choix stag : </label>
@@ -53,8 +53,8 @@ session_start();
       <!-- CHOIX DE LA PENALITE-->
 
       <div class="btn-group">
-        <label class="textorange text-light" for="id" class = "menu">choix stag : </label>
-          <select  id='prenom' name ='prenom' class = "menu">
+        <label class="textorange text-light" for="penalite" class = "menu">choix stag : </label>
+          <select  id='penalite' name ='penalite' class = "menu">
             <option selected>Choisir un prenom </option>
             <?php for ($i=0; $i < count($_SESSION['penalite']); $i++) {?>
             <option value='<?= $_SESSION['penalite'][$i]['type']?>'><?= $_SESSION['penalite'][$i]['type']?></option>';
