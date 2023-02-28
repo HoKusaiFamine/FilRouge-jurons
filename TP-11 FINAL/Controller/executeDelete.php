@@ -1,8 +1,9 @@
 <?php
 
 include "../modele/Services/DBManagement.php";
-session_start();
-
+ session_start();
+// $_SESSION['user'] = null;
+$status2 = deleteBalanceInjure($_POST['id_user']);
 $status = deleteStagiaire($_POST['id_user']);
 
 $_SESSION['user'] = selectStagiaire();

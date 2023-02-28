@@ -42,18 +42,15 @@ function selectPenalite() : array{
 
 //***********************************************************
 
-function balancePenalite ($id_penalite,$id_user,$date,$id_balance){
+function balancePenalite ( ){
     $host = 'localhost';
     $dbname = 'boîte_a_jurons';
     $username = 'root';
     $password = '';
-
+      
     $dsn = "mysql:host=$host;dbname=$dbname"; 
     // récupérer tous les utilisateurs
-    $con = mysqli_connect("localhost","root","","boîte_a_jurons");
-    $sql1 = mysqli_query($con,"SELECT id_user FROM user WHERE prenom = '$id_user'");
-    $sql2 = mysqli_query($con,"SELECT id_penalite from penalite WHERE type = '$id_penalite'");
-    $sql = "INSERT INTO balance_injure (id_penalite, id_user, date, id_user_balance) VALUES ($sql1,$sql2,$date,$id_balance)";
+    $sql = "SELECT nom,prenom FROM user NATURAL JOIN penalite";
     
     $pdo = new PDO($dsn, $username, $password);
     $stmt = $pdo->query($sql);
