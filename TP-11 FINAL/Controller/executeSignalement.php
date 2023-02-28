@@ -8,9 +8,6 @@ $_SESSION['stag'] = selectStagiaires();
 $_SESSION['penalite'] = selectPenalite();
 
 
-print_r($_SESSION['connect'][0]['id_user']);
+
 
 header('Location:../View/signalement.php');
-
-
-// insertPenalite();
