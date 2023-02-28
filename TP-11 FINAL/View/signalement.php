@@ -22,10 +22,10 @@
         <a class="nosoulign" href="home.html">Acceuil</a>
         <a class="nosoulign" href="../View/signalement.php">Signalement</a>
         <a class="nosoulign" href="../Controller/executeHistorique.php">Historique</a>
-        <a class="nosoulign" href="acceuil.php">Statistique</a>
+        <a class="nosoulign" href="statistique.php">Statistique</a>
     </div>
     <div class="droite">
-    <a class="nosoulign2" href="../Controller/executeDeco.php">deconection</a>
+    <a class="nosoulign2" href="../Controller/executeDeco.php">deconnexion</a>
     </div>
   </header>
 <body>
