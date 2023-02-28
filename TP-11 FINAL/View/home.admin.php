@@ -23,7 +23,7 @@
         <a class="nosoulign" href="acceuil.php">Statistique</a>
     </div>
     <div class="droite">
-    <a class="nosoulign2" href="../Controller/executeDeco.php">deconection</a>
+    <a class="nosoulign2" href="../Controller/executeDeco.php">deconnexion</a>
     </div>
   </header>
 

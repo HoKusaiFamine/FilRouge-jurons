@@ -26,7 +26,7 @@
         <a class="nosoulign" href="../View/statistique.php">Statistique</a>
     </div>
     <div class="droite">
-    <a class="nosoulign2" href="../Controller/executeDeco.php">deconection</a>
+    <a class="nosoulign2" href="../Controller/executeDeco.php">deconnexion</a>
     </div>
   </header>
   
@@ -44,12 +44,14 @@ if (!$con) {
   echo "la connexion a la bdd a echoué";
 }
 //requete pour avoir le prenom et les montants
-$req = mysqli_query($con,"SELECT prix, prenom from penalite NATURAL JOIN user NATURAL JOIN balance_injure;");
-
+$req = mysqli_query($con,"SELECT DISTINCT prenom from penalite NATURAL JOIN user NATURAL JOIN balance_injure;");
+$req2 = mysqli_query($con,"SELECT SUM(prix) from penalite NATURAL JOIN user NATURAL JOIN balance_injure group by prenom;");
 //boucle pour mettre les données dans un tableau
 foreach ($req as $data) {
   $prenom[] = $data['prenom'];
-  $prix[] = $data['prix'];
+}
+foreach ($req2 as $data2) {
+  $prix[] = $data2['SUM(prix)'];
 }
 
 ?>
@@ -67,6 +69,7 @@ new Chart(ctx, {
     }]
   },
   options: {
+    
     
   }
 });</script>

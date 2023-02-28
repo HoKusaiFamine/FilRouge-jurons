@@ -179,7 +179,43 @@ function selectLogMdp() : array{
 
 //***************************************
 
+function afficheHistorique() : array{
 
+    $host = 'localhost';
+    $dbname = 'boîte_a_jurons';
+    $username = 'root';
+    $password = '';
+      
+    $dsn = "mysql:host=$host;dbname=$dbname"; 
+    // récupérer tous les utilisateurs
+    $sql = "SELECT * FROM balance_injure NATURAL JOIN user NATURAL JOIN penalite;" ;
+    
+    $pdo = new PDO($dsn, $username, $password , array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $stmt = $pdo->query($sql);
+    $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $user;
+    }
+
+
+
+//***************************************
+
+
+function controlInscription($login) : bool{
+
+    $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
+    $stmt= $pdo->prepare("SELECT login  FROM user WHERE login = '$login' ");
+    $stmt->execute();
+    $userTab = $stmt->fetchAll();
+    $_SESSION['inscription'] = $userTab;
+    print_r($_SESSION['inscription']);
+if(count($userTab) < 2)
+    return true;
+else    
+    return false;
+  
+}
 
 
 
