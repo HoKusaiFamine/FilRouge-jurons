@@ -24,3 +24,14 @@ li {
 .btn-group{
     margin: 3%;
 }
+
+.menu {
+    background-color: gray;
+    color : white;
+    border-radius: 5px;
+
+}
+
+.card_body{
+    
+}

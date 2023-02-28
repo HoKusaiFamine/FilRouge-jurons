@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="CSS/styleIndex.css" />
-    <title>Inscription</title>
+    <title>Index</title>
   </head>
   <body>
 <!-- <p je suis la ></p> -->

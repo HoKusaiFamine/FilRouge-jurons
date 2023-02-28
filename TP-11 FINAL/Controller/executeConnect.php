@@ -17,4 +17,9 @@ if (controlLogin($login,$mdp)){
     header('location:../View/index.php');
 }
 
+
+// controlLogin($login,$mdp);
+
+
+
 ?>

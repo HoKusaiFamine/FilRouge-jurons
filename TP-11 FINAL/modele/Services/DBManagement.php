@@ -136,10 +136,10 @@ function selectLogMdp() : array{
         $userTab = $stmt->fetchAll();
         $_SESSION['connect'] = $userTab;
         print_r($_SESSION['connect']);
-   if(count($userTab) > 0)
-        return true;
-    else    
-        return false;
+        if(count($userTab) > 0)
+            return true;
+        else    
+            return false;
     
 
        
@@ -180,34 +180,8 @@ function selectLogMdp() : array{
 //***************************************
 
 
-function controlInscription($login) : bool{
 
-    $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
-    $stmt= $pdo->prepare("SELECT login  FROM user WHERE login = '$login' ");
-    $stmt->execute();
-    $userTab = $stmt->fetchAll();
-    $_SESSION['inscription'] = $userTab;
-    print_r($_SESSION['inscription']);
-if(count($userTab) < 2)
-    return true;
-else    
-    return false;
-  
-}
-function controlAdmin($type) : string{
 
-    $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
-    $stmt= $pdo->prepare("SELECT type  FROM profil WHERE type = '$type' ");
-    $stmt->execute();
-    $userTab = $stmt->fetchAll();
-    $_SESSION['admin'] = $userTab;
-    print_r($_SESSION['admin']);
-if(count($userTab) < 2)
-    return true;
-else    
-    return false;
-  
-}
 
 
 ?>

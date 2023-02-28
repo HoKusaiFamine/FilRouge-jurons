@@ -30,82 +30,59 @@
   </header>
 <body>
     
-  <?php
-  session_start();
-  // $listeStag = array("Kaouthar",
-  // "Lucas",
-  // "Sebastien",
-  // "Yacoube",
-  // "Anthony",
-  // "Alexandre",
-  // "Jean-Batiste",
-  // "Gregory",
-  // "Julien",
-  // "Thomas",
-  // "Thibaut",
-  // "Maksen",
-  // "Florian",
-  // "Paul",
-  // "Batiste");
-  
-  //print_r($_SESSION["nom"]) ?>
+<?php
+session_start();
+?>
 <div class="card" style="width: 40rem;height: 30rem">
-<div class="card-body">
+  <div class="card-body">
 
 
-  <form action="../Controller/SignalementReçois.php" method="post" class="form">
-    <!-- Choix du stagiaire -->
-    <div class="btn-group">
-    <label class="textorange text-light" for="id">choix stag : </label>
-                <select class="resizeselect" id='prenom' name ='prenom'>
-                    <option selected>Choisir un prenom </option>
-
-                    <?php for ($i=0; $i < count($_SESSION['stag']); $i++) {?>
-
-                    <option value='<?= $_SESSION['stag'][$i]['prenom']?>'><?= $_SESSION['stag'][$i]['prenom']?></option>';
-                <?php }?>
-                </select>
-    </div>
+    <form action="../Controller/executeSignalement.php" method="post" class="form">
+      <!-- Choix du stagiaire -->
+      <div class="btn-group">
+        <label class="textorange text-light" for="id" class = "menu">choix stag : </label>
+          <select  id='prenom' name ='prenom' class = "menu">
+            <option selected>Choisir un prenom </option>
+            <?php for ($i=0; $i < count($_SESSION['stag']); $i++) {?>
+            <option value='<?= $_SESSION['stag'][$i]['prenom']?>'><?= $_SESSION['stag'][$i]['prenom']?></option>';
+            <?php }?>
+          </select>
+      </div>
 
 
-    <!-- CHOIX DE LA PENALITE-->
+      <!-- CHOIX DE LA PENALITE-->
 
-    <div class="btn-group">
-    <label class="textorange text-light" for="id">choix stag : </label>
-                <select class="resizeselect" id='prenom' name ='prenom'>
-                    <option selected>Choisir un prenom </option>
-
-                    <?php for ($i=0; $i < count($_SESSION['penalite']); $i++) {?>
-
-                    <option value='<?= $_SESSION['penalite'][$i]['type']?>'><?= $_SESSION['penalite'][$i]['type']?></option>';
-                  <?php }?>
-                </select>
-    </div>
+      <div class="btn-group">
+        <label class="textorange text-light" for="id" class = "menu">choix stag : </label>
+          <select  id='prenom' name ='prenom' class = "menu">
+            <option selected>Choisir un prenom </option>
+            <?php for ($i=0; $i < count($_SESSION['penalite']); $i++) {?>
+            <option value='<?= $_SESSION['penalite'][$i]['type']?>'><?= $_SESSION['penalite'][$i]['type']?></option>';
+            <?php }?>
+          </select>
+      </div>
 
 
-    <!-- NOMBRE-->
+      <!-- NOMBRE-->
 
-    <div class="btn-group">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-        Quantité
-      </button>
-      <ul class="dropdown-menu">
-        <!--NB DE JURONS-->
-        <div class="nbJuron">
-          <li><label for="quantitéJr">Nombre de juron/rot</label>
-            <input type="number" id="quantitéJr" name="quantitéJr" min="1" max="5">
-          </li>
-        </div>
-        <!--RETARD-->
-        <div class="nbRetard">
-          <li class="nbRetard"><label for="quantitéRetard">Nombre de minutes de retard</label>
-            <input type="number" id="quantitéRetard" name="quantitéRetard" min="5" max="">
-          </li>
-        </div>
-      </ul>
-    </div>
-    <input class="btn btn-success submit" type="submit" value="Le signaler sans pitié"/>
-  </form>
+      <div class="btn-group">
+        <label class="textorange text-light" for="id" class = "menu">choix Quantité : </label>
+        <select name="Quantite" id="Quantite" class = "menu">
+          <option value="Quantite">Quantite</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <input class="btn btn-success submit" type="submit" value="Le signaler sans pitié"/>
+    </form>
   </div>
 </div>
 
