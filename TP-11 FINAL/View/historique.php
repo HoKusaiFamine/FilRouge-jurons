@@ -23,7 +23,7 @@
         <a class="nosoulign" href="../View/statistique.php">Statistique</a>
     </div>
     <div class="droite">
-    <a class="nosoulign2" href="../Controller/executeDeco.php">deconnexion</a>
+    <a class="nosoulign2" href="../Controller/executeDeco.php">deconection</a>
     </div>
   </header>
 
@@ -51,14 +51,14 @@
     </tr>
 </thead>
 
-<?php for ($i = 0; $i < count($_SESSION['User']); $i++) {
+<?php for ($i = 0; $i < count($_SESSION['balance_injure']); $i++) {
         echo '<tr class="">';
-        echo '<td class="bg-info-subtle text-dark rounded-start-2 opacity-75">' . $_SESSION['User'][$i]['nom'] . '</td>';
-        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['User'][$i]['nom'] . '</td>';
-        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
-        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
-        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
-        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-start-2 opacity-75">' . $_SESSION['balance_injure'][$i]['nom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['balance_injure'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['balance_injure'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['balance_injure'][$i]['type'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['balance_injure'][$i]['prix'] .  ' centimes </td>';
+        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['balance_injure'][$i]['date'] . '</td>';
         echo '</tr>';
     }
 ?>
