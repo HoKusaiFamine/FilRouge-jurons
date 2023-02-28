@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="CSS/styleIndex.css" />
-    <title>Inscription</title>
+    <title>Inscription2</title>
   </head>
   <body>
 <!-- <p je suis la ></p> -->
@@ -23,7 +23,7 @@
     <div class="centreForm">
       <div class="formConnect">
         <form action="../Controller/execute.inscription.php" method="POST">
-          <p class="m-3">S'inscrire</p>
+          <p class="m-3">S'inscrire le login dejas utilise choisir un autre</p>
           <div class="form-outline m-2">
           <input type="text" class="form-control" 
                 name="login" placeholder="Login" required />

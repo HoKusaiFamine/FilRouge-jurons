@@ -14,6 +14,13 @@ $prenom = $_POST['prenom'];
 $mail = $_POST['mail'];
 $password = $_POST['mdp'];
 
- insertStagiaires($login ,$username,$prenom,$password,1,$mail);
+//verifier si login existe deja sinon recommencer
+if (controlInscription($login)){
+    insertStagiaires($login ,$username,$prenom,$password,2,$mail);
+    header("Location:../View/index.php");
+}else {  
+    header("Location:../View/inscription2.php");
+}
 
- header("Location:../View/index.php");
+
+

@@ -1,7 +1,7 @@
 <?php
 
 include "../modele/Services/DBManagement.php";
-session_start();
+ session_start();
 
 $status = deleteStagiaire($_POST['id_user']);
 
