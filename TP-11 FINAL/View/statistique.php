@@ -35,8 +35,41 @@
       
       <canvas class="graph" id="myChart"></canvas>
     </div>
+
+    <?php
+//connection a la bdd
+$con = mysqli_connect("localhost","root","","boîte_a_jurons");
+//veification de la connexion 
+if (!$con) {
+  echo "la connexion a la bdd a echoué";
+}
+//requete pour avoir le prenom et les montants
+$req = mysqli_query($con,"SELECT prix, prenom from penalite NATURAL JOIN user NATURAL JOIN balance_injure;");
+
+//boucle pour mettre les données dans un tableau
+foreach ($req as $data) {
+  $prenom[] = $data['prenom'];
+  $prix[] = $data['prix'];
+}
+
+?>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/script.js"></script>
+    <script >const ctx = document.getElementById('myChart').getContext('2d');
+
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: <?php echo json_encode($prenom) ?>,
+    datasets: [{
+      label: 'Dette en €',
+      data: <?php echo json_encode($prix) ?>,
+      borderWidth: 1
+    }]
+  },
+  options: {
+    
+  }
+});</script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
