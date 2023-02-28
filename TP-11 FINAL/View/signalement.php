@@ -20,7 +20,7 @@
     </div>
     <div class="centre">
         <a class="nosoulign" href="home.html">Acceuil</a>
-        <a class="nosoulign" href="signalement.php">Signalement</a>
+        <a class="nosoulign" href="../View/signalement.php">Signalement</a>
         <a class="nosoulign" href="../Controller/executeHistorique.php">Historique</a>
         <a class="nosoulign" href="acceuil.php">Statistique</a>
     </div>
