@@ -18,9 +18,9 @@
     </div>
     <div class="centre">
         <a class="nosoulign" href="../View/home.html">Acceuil</a>
-        <a class="nosoulign" href="signalement.php">Signalement</a>
+        <a class="nosoulign" href="acceuil.php">Signalement</a>
         <a class="nosoulign" href="../Controller/executeHistorique.php">Historique</a>
-        <a class="nosoulign" href="statistique.php">Statistique</a>
+        <a class="nosoulign" href="acceuil.php">Statistique</a>
     </div>
     <div class="droite">
     <a class="nosoulign2" href="../Controller/executeDeco.php">deconnexion</a>
@@ -29,6 +29,8 @@
 
 <body>
 <?php session_start() ?>
+
+
 
 
 <div class="container">

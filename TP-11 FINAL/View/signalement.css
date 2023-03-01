@@ -13,7 +13,6 @@
     display:flex;
     margin-left: 30%;
     
-    
     background-image: url("./img/IMG_1765.JPG");
     background-repeat: no-repeat;
     background-position-y: center;
@@ -33,17 +32,6 @@ li {
 
 }
 
-.form{
-    background-color: rgb(4, 0, 255);
-    margin-bottom: 5%;
-}
-.btn_submit{
-    background-color: green;
-    
-    display: flex;
-    width: 30%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 17em;
+.card_body{
     
 }
