@@ -15,7 +15,7 @@ $mail = $_POST['mail'];
 $password = $_POST['mdp'];
 
 if (controlInscription($login)){
-    insertStagiaires($username,$prenom,$login ,$password,2,$mail);
+    insertStagiaires($username,$prenom,$login ,$password,1,$mail);
     header("Location:../View/index.php");
 }else {  
     header("Location:../View/inscription2.php");

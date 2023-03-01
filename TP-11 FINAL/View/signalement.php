@@ -40,7 +40,7 @@ session_start();
     <form action="../Controller/executeBalance.php" method="post" class="form">
       <!-- Choix du stagiaire -->
       <div class="btn-group">
-        <label class="textorange text-light" for="id" class = "menu"></label>
+        <label class="textorange text-light" for="id" class = "menu">choix stag : </label>
           <select  id='prenom' name ='prenom' class = "menu">
             <option selected>Choisir un prenom </option>
             <?php for ($i=0; $i < count($_SESSION['stag']); $i++) {?>
@@ -53,7 +53,7 @@ session_start();
       <!-- CHOIX DE LA PENALITE-->
 
       <div class="btn-group">
-        <label class="textorange text-light" for="penalite" class = "menu"></label>
+        <label class="textorange text-light" for="penalite" class = "menu">choix stag : </label>
           <select  id='penalite' name ='penalite' class = "menu">
             <option selected>Choisir une penalite </option>
             <?php for ($i=0; $i < count($_SESSION['penalite']); $i++) {?>
@@ -66,7 +66,7 @@ session_start();
       <!-- NOMBRE-->
 
       <div class="btn-group">
-        <label class="textorange text-light" for="id" class = "menu"> </label>
+        <label class="textorange text-light" for="id" class = "menu">choix Quantité : </label>
         <select name="Quantite" id="Quantite" class = "menu">
           <option value="Quantite">Quantite</option>
           <option value="1">1</option>
