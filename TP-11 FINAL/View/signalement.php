@@ -81,7 +81,9 @@ session_start();
           <option value="10">10</option>
         </select>
       </div>
-      <input class="btn btn-success submit" type="submit" value="Le signaler sans pitié"/>
+      <div class="btn_submit">
+        <input class="btn" type="submit" value="Le signaler sans pitié"/>
+      </div>
     </form>
   </div>
 </div>
