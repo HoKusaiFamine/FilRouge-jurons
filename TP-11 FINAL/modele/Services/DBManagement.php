@@ -210,7 +210,7 @@ function controlInscription($login) : bool{
     $userTab = $stmt->fetchAll();
     $_SESSION['inscription'] = $userTab;
     print_r($_SESSION['inscription']);
-if(count($userTab) < 2)
+if(count($userTab) < 1)
     return true;
 else    
     return false;
