@@ -13,6 +13,7 @@
     display:flex;
     margin-left: 30%;
     
+    
     background-image: url("./img/IMG_1765.JPG");
     background-repeat: no-repeat;
     background-position-y: center;
@@ -32,6 +33,25 @@ li {
 
 }
 
-.card_body{
+.form{
+    
+    background-color: rgb(194, 194, 194);
+    /* margin-bottom: 5%; */
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    padding-top: 15%;
+    padding-bottom: 13%;
+    
+    
+}
+.btn_submit{
+    background-color: rgb(75, 74, 74);
+    color:  white;
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    margin-top:3em;
     
 }

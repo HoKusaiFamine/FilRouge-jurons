@@ -44,8 +44,8 @@ if (!$con) {
   echo "la connexion a la bdd a echoué";
 }
 //requete pour avoir le prenom et les montants
-$req = mysqli_query($con,"SELECT DISTINCT prenom from penalite NATURAL JOIN user NATURAL JOIN balance_injure order by prenom;");
-$req2 = mysqli_query($con,"SELECT SUM(prix) from penalite NATURAL JOIN user NATURAL JOIN balance_injure group by prenom order by prenom;");
+$req = mysqli_query($con,"SELECT DISTINCT prenom from penalite NATURAL JOIN user NATURAL JOIN balance_injure;");
+$req2 = mysqli_query($con,"SELECT SUM(prix) from penalite NATURAL JOIN user NATURAL JOIN balance_injure group by prenom;");
 //boucle pour mettre les données dans un tableau
 foreach ($req as $data) {
   $prenom[] = $data['prenom'];
@@ -69,21 +69,6 @@ new Chart(ctx, {
     }]
   },
   options: {
-    plugins: {
-      
-      legend:{
-        position:'bottom',
-        labels:{
-          padding:50,
-          color:'#000',
-          boxHeight:25,
-          boxWidth:50,
-          font:{
-            size:30,
-          }
-        }
-      }
-    }
     
     
   }

@@ -1,7 +1,6 @@
 body{
     background-image: url(../assets/p6210157-2.jpg) ;
     background-size:110%;
-    background-attachment: fixed;
 }
 
 .formConnect{
@@ -60,7 +59,6 @@ body{
 }
 
 .posgraph{
-    margin-top: 3%;
-    margin-left: 23%;
-    width: 54%;
+    width: 40%;
+    margin-left: 30%;
 }
