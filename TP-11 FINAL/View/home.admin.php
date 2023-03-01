@@ -18,9 +18,9 @@
     </div>
     <div class="centre">
         <a class="nosoulign" href="../View/home.html">Acceuil</a>
-        <a class="nosoulign" href="signalement.php">Signalement</a>
+        <a class="nosoulign" href="acceuil.php">Signalement</a>
         <a class="nosoulign" href="../Controller/executeHistorique.php">Historique</a>
-        <a class="nosoulign" href="statistique.php">Statistique</a>
+        <a class="nosoulign" href="acceuil.php">Statistique</a>
     </div>
     <div class="droite">
     <a class="nosoulign2" href="../Controller/executeDeco.php">deconnexion</a>
@@ -29,6 +29,84 @@
 
 <body>
 <?php session_start() ?>
+<!-- <thead>
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-12">
+<div class="card mt-4">
+ <div class="card-body">
+                         
+<table class="table table-bordered table-striped">
+
+<thead>
+    <tr>
+        <th class="rounded-start-2">NOM</th>
+        <th class="">PRENOM</th>
+        <th class="">Balance</th>
+        <th class="">Infraction</th>
+        <th class="">Montant</th>
+        
+        <th class="rounded-end-3">DATE</th>
+    </tr>
+</thead>
+
+<?php for ($i = 0; $i < count($_SESSION['User']); $i++) {
+        echo '<tr class="">';
+        echo '<td class="bg-info-subtle text-dark rounded-start-2 opacity-75">' . $_SESSION['User'][$i]['nom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['User'][$i]['nom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
+        echo '</tr>';
+    }
+?>
+*
+je suis pas la
+</table>
+</div>  
+
+
+
+<thead>
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-12">
+<div class="card mt-4">
+ <div class="card-body">
+                         
+<table class="table table-bordered table-striped">
+
+<thead>
+    <tr>
+        <th class="rounded-start-2">NOM</th>
+        <th class="">PRENOM</th>
+        <th class="">Balance</th>
+        <th class="">Infraction</th>
+        <th class="">Montant</th>
+        
+        <th class="rounded-end-3">DATE</th>
+    </tr>
+</thead>
+
+<?php for ($i = 0; $i < count($_SESSION['User']); $i++) {
+        echo '<tr class="">';
+        echo '<td class="bg-info-subtle text-dark rounded-start-2 opacity-75">' . $_SESSION['User'][$i]['nom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['User'][$i]['nom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
+        echo '<td class="bg-info-subtle text-dark rounded-end-2 opacity-75">' . $_SESSION['User'][$i]['prenom'] . '</td>';
+        echo '</tr>';
+    }
+?>
+*
+je suis ici
+</table>
+</div>   -->
+
 
 
 <div class="container">
