@@ -2,15 +2,15 @@
 
 // fonction insert 
 
-function insertPenalite($prix,$type,$quantite):bool{
+function insertPenalite($prix,$type):bool{
     //Chaine de connexion à la base de donnée
     $bdd = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
   
-    $sql = "INSERT INTO penalite (prix,type,quantite) VALUES (?,?,?)";
+    $sql = "INSERT INTO penalite (prix,type) VALUES (?,?)";
     $stmt= $bdd->prepare($sql);
     $stmt->bindParam(1, $prix);
     $stmt->bindParam(2, $type);
-    $stmt->bindParam(3, $quantite);
+   
 
     $status = $stmt->execute();
 

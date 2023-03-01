@@ -55,7 +55,7 @@ session_start();
       <div class="btn-group">
         <label class="textorange text-light" for="penalite" class = "menu">choix stag : </label>
           <select  id='penalite' name ='penalite' class = "menu">
-            <option selected>Choisir un prenom </option>
+            <option selected>Choisir une penalite </option>
             <?php for ($i=0; $i < count($_SESSION['penalite']); $i++) {?>
             <option value='<?= $_SESSION['penalite'][$i]['type']?>'><?= $_SESSION['penalite'][$i]['type']?></option>';
             <?php }?>

@@ -8,7 +8,7 @@ $id_penalite = $_POST['penalite'];
 
 $id_balance = $_SESSION['connect'][0]['id_user'];
 
-$date = date("d-m-Y h-i-s");
+$date = date("Y-m-d h-i-s");
 
 $id_user = $_POST['prenom'];
 
@@ -19,7 +19,13 @@ $rep2 = selectIdUser($id_user);
 
 $idUser = $rep2[0]['id_user'];
 
-balancePenalite($id_pena,$idUser,$date,$id_balance);
+$quantite = $_POST['Quantite'];
+
+for ($i=1; $i <= $quantite ; $i++) { 
+    balancePenalite($id_pena,$idUser,$date,$id_balance);
+}
+
+
 
 header('Location:../Controller/executeHistorique.php');
 

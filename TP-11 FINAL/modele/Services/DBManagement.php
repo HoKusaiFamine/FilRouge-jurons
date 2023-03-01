@@ -131,7 +131,7 @@ function selectLogMdp() : array{
     function controlLogin($login, $mdp) : bool{
 
         $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
-        $stmt= $pdo->prepare("SELECT login,mdp, id_user  FROM user WHERE login = '$login' and mdp = '$mdp' ");
+        $stmt= $pdo->prepare("SELECT login,mdp, id_user, id_profil, prenom  FROM user WHERE login = '$login' and mdp = '$mdp' ");
         $stmt->execute();
         $userTab = $stmt->fetchAll();
         $_SESSION['connect'] = $userTab;
