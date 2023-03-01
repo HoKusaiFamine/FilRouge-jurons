@@ -22,7 +22,7 @@
 <?php session_start() ; ?>
     <div class="centreForm">
       <div class="formConnect">
-        <form action="../Controller/execute.inscription.php" method="POST">
+        <form action="../Controller/executeInscription.php" method="POST">
           <p class="m-3">S'inscrire le login dejas utilise choisir un autre</p>
           <div class="form-outline m-2">
           <input type="text" class="form-control" 
