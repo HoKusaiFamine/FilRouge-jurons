@@ -217,7 +217,33 @@ else
   
 }
 
-
+function updateUser($login,$nom,$prenom,$mail): bool
+{
+    $host = 'localhost';
+    $dbname = 'boîte_a_jurons';
+    $username = 'root';
+    $password = '';
+    $dsn = "mysql:host=$host;dbname=$dbname";
+    // modification des données
+   
+    $sql = "UPDATE user SET  nom ='$nom', prenom='$prenom', mail='$mail' WHERE login='$login'";
+    $pdo = new PDO($dsn, $username, $password);
+    $stmt = $pdo->prepare($sql);
+    $update = $stmt->execute();
+    return $update;
+}
+function deleteBalanceInjure($liste): bool
+{
+    $bdd = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $status = false;
+    foreach ($liste as $id_user) {
+        $sql = "DELETE FROM balance_injure WHERE id_user ='$id_user'";
+        $stmt = $bdd->prepare($sql);
+        $status = $stmt->execute();
+    }
+    
+    return $status;
+}
 
 
 ?>
