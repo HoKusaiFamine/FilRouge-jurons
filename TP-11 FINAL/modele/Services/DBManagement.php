@@ -217,6 +217,21 @@ else
   
 }
 
+function updateUser($login,$nom,$prenom,$mail): bool
+{
+    $host = 'localhost';
+    $dbname = 'boîte_a_jurons';
+    $username = 'root';
+    $password = '';
+    $dsn = "mysql:host=$host;dbname=$dbname";
+    // modification des données
+   
+    $sql = "UPDATE user SET  nom ='$nom', prenom='$prenom', mail='$mail' WHERE login='$login'";
+    $pdo = new PDO($dsn, $username, $password);
+    $stmt = $pdo->prepare($sql);
+    $update = $stmt->execute();
+    return $update;
+}
 
 
 
