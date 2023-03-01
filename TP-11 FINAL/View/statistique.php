@@ -65,10 +65,25 @@ new Chart(ctx, {
     datasets: [{
       label: 'Dette en €',
       data: <?php echo json_encode($prix) ?>,
-      borderWidth: 1
+      borderWidth: 2
     }]
   },
   options: {
+    plugins: {
+      
+      legend:{
+        position:'bottom',
+        labels:{
+          padding:50,
+          color:'#000',
+          boxHeight:25,
+          boxWidth:50,
+          font:{
+            size:30,
+          }
+        }
+      }
+    }
     
     
   }
