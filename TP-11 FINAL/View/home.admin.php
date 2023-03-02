@@ -88,7 +88,7 @@
                 <div class="col-md-12">
                     <div class="card mt-2">
                         <div class="card-body">
-                            <!-- <form action="../Controller/excuteUpdate.php" method="POST">                        -->
+                            <form action="../Controller/executeUpdate.php" method="POST">                       
                             <table class="table table-bordered table-striped">
                                 <tr>
                                     <th class="rounded-start-2">LOGIN</th>
@@ -108,7 +108,7 @@
                             </table>
                             <tbody class="">
                                 <div class="d-flex justify-content-center mb-3">
-                                    <form role="form" method="POST" action="../Controller/excuteUpdate.php">
+                                    <!-- <form role="form" method="POST" action="../Controller/executeUpdate.php"> -->
                                         <label class="text-black me-2">LOGIN</label>
                                         <input type="login" class="me-5" name="login">
                                         <label class="text-black me-2">NOM</label>
@@ -123,12 +123,17 @@
                                     <a href="../View/home.admin.php" class="btn btn-danger">Annuler </a>
                                     </form>
                                 </div>
-                            </tbody>
+                                </tbody>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                </div>
+        
+
+
+        
+       
+    
     
     
 
@@ -146,6 +151,7 @@
                 <div class="col-md-12">
                     <div class="card mt-2">
                         <div class="card-body">
+                        <form action="../Controller/executeAjoutInjure.php" method="POST"> 
                             <table class="table table-bordered table-striped">
                                 <tr>
                                     <th class="rounded-start-2">ID_PENALITE</th>
@@ -163,11 +169,11 @@
                             </table>
                             <tbody class="">
                                 <div class="d-flex justify-content-center mb-3">
-                                    <form role="form" method="POST" action="../Controller/excuteUpdate.php">
+                                    <form role="form" method="POST" action="../Controller/excuteAjoutInjure.php">
                                         <label class="text-black me-2">PRIX</label>
-                                        <input type="login" class="me-5" name="prix">
+                                        <input type="prix" class="me-5" name="prix">
                                         <label class="text-black me-2">TYPE</label>
-                                        <input type="nom" class="me-5" name="type">
+                                        <input type="type" class="me-5" name="type">
                                 </div>
                                 <div class="d-flex justify-content-center justify-content-around mb-3">
                                     <input type="submit" name="submit" class="btn btn-success" value="Update">
@@ -175,13 +181,10 @@
                                     </form>
                                 </div>
                             </tbody>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+                       
+                  
+  
+ 
 </body>
 
 </html>

@@ -244,6 +244,20 @@ function deleteBalanceInjure($liste): bool
     
     return $status;
 }
-
+function insertInjure($prix,$type): bool
+{
+    $host = 'localhost';
+    $dbname = 'boîte_a_jurons';
+    $username = 'root';
+    $password = '';
+    $dsn = "mysql:host=$host;dbname=$dbname";
+    // modification des données
+   
+    $sql = "INSERT INTO penalite (prix,type) VALUES ($prix,$type)";
+    $pdo = new PDO($dsn, $username, $password);
+    $stmt = $pdo->prepare($sql);
+    $update = $stmt->execute();
+    return $update;
+}
 
 ?>
