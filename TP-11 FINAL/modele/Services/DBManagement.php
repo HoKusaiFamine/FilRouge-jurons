@@ -4,6 +4,10 @@ session_start();
 // fonction insert 
 
 function insertStagiaires($nom,$prenom,$login,$mdp,$id_profil,$mail):bool{
+
+    //cryptage mdp
+    $mdp_crypte = sha1(sha1($mdp));
+
     //Chaine de connexion à la base de donnée
     $bdd = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
   
@@ -12,7 +16,7 @@ function insertStagiaires($nom,$prenom,$login,$mdp,$id_profil,$mail):bool{
     $stmt->bindParam(1, $nom);
     $stmt->bindParam(2, $prenom);
     $stmt->bindParam(3, $login);
-    $stmt->bindParam(4, $mdp);
+    $stmt->bindParam(4, $mdp_crypte);
     $stmt->bindParam(5, $id_profil);
     $stmt->bindParam(6, $mail);
     $status = $stmt->execute();
@@ -130,8 +134,12 @@ function selectLogMdp() : array{
 
     function controlLogin($login, $mdp) : bool{
 
+
+        //cryptage mdp
+    $mdp_crypte = sha1(sha1($mdp));
+
         $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
-        $stmt= $pdo->prepare("SELECT login,mdp, id_user, id_profil, prenom  FROM user WHERE login = '$login' and mdp = '$mdp' ");
+        $stmt= $pdo->prepare("SELECT login,mdp, id_user, id_profil, prenom  FROM user WHERE login = '$login' and mdp = '$mdp_crypte' ");
         $stmt->execute();
         $userTab = $stmt->fetchAll();
         $_SESSION['connect'] = $userTab;
