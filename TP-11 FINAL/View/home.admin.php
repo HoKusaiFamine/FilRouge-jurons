@@ -27,13 +27,12 @@
 <body>
     <?php session_start() ?>
 
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card mt-5">
                     <div class="card-header">
-                        <h4>selectionne un ou plusieur nom pour suprimer de la BDD</h4>
+                        <h4>Selectionne un ou plusieur nom pour suprimer de la BDD</h4>
 
                     </div>
                 </div>
@@ -82,7 +81,7 @@
                 <div class="col-md-12">
                     <div class="card mt-5">
                         <div class="card-header">
-                            <h4>inscrit l id pour modifier nom et prenom</h4>
+                            <h4>Inscrit le login pour modifier nom et prenom et/ou mail</h4>
                         </div>
                     </div>
                 </div>
@@ -129,6 +128,60 @@
                     </div>
                 </div>
             </div>
+        </div>
+    
+    
+
+
+
+    <div class>
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="card mt-5">
+                        <div class="card-header">
+                            <h4>ajoute une injure</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th class="rounded-start-2">ID_PENALITE</th>
+                                    <th class="">PRIX</th>
+                                    <th class="rounded-end-3">TYPE</th>
+                                </tr>
+                                <?php for ($i = 0; $i < count($_SESSION['penalite']); $i++) {
+                                    echo '<tr class="">';
+                                    echo '<td class="bg-info-subtle text-dark rounded-start-2 opacity-75">' . $_SESSION['penalite'][$i]['id_penalite'] . '</td>';
+                                    echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['penalite'][$i]['prix'] . '</td>';
+                                    echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['penalite'][$i]['type'] . '</td>';
+                                    echo '</tr>';
+                                }
+                                ?>
+                            </table>
+                            <tbody class="">
+                                <div class="d-flex justify-content-center mb-3">
+                                    <form role="form" method="POST" action="../Controller/excuteUpdate.php">
+                                        <label class="text-black me-2">PRIX</label>
+                                        <input type="login" class="me-5" name="prix">
+                                        <label class="text-black me-2">TYPE</label>
+                                        <input type="nom" class="me-5" name="type">
+                                </div>
+                                <div class="d-flex justify-content-center justify-content-around mb-3">
+                                    <input type="submit" name="submit" class="btn btn-success" value="Update">
+                                    <a href="../View/home.admin.php" class="btn btn-danger">Annuler </a>
+                                    </form>
+                                </div>
+                            </tbody>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
 
 </html>
