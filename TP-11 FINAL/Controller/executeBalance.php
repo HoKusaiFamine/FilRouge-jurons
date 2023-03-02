@@ -25,7 +25,7 @@ for ($i=1; $i <= $quantite ; $i++) {
     balancePenalite($id_pena,$idUser,$date,$id_balance);
 }
 
-
+$_SESSION['premier'] = recupPremier();
 
 header('Location:../Controller/executeHistorique.php');
 

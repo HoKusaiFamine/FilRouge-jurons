@@ -39,12 +39,22 @@
     <img src="../View/img/podium-removebg-preview.png" alt="podium" class="center posimage" ></body>
 </div>
 <div>
-    <p>
         <?php 
-            $prems = $_SESSION['premier'][1]['prenom']; 
-            echo "$prems"; 
-        ?> 
-    </p>
+            $premier = $_SESSION['premier'][0]['prenom']; 
+            $deuxieme = $_SESSION['premier'][1]['prenom'];
+            $troisieme = $_SESSION['premier'][2]['prenom'];
+            ?> 
+            <div class="centrerLabel">
+                <div class="sizelabel2">
+                    <?php echo "$deuxieme"?>
+                </div>
+                <div class="sizelabel1">
+                    <?php echo "$premier"?>
+                </div>
+                <div class="sizelabel3">
+                <?php echo "$troisieme"?>
+                </div>
+            </div>
 </div>
 
       

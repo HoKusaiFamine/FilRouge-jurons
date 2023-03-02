@@ -112,4 +112,41 @@ body{
  
   .posimage{
     margin-top: 5em;
+    padding-right: 3%;
+  }
+
+  .centrerLabel{
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    width: 32%;
+    margin-left: 34%;
+    
+  }
+
+  .sizelabel1{
+    width: 33%;
+    background-color: rgb(237, 211, 4);
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    margin: 20px;
+  }
+  
+  .sizelabel2{
+    width: 33%;
+    background-color: rgb(216, 218, 201);
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    margin: 20px;
+  }
+
+  .sizelabel3{
+    width: 33%;
+    background-color:rgb(253, 180, 101);
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    margin: 20px;
   }

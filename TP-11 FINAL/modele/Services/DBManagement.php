@@ -133,8 +133,6 @@ function selectLogMdp() : array{
 
 
     function controlLogin($login, $mdp) : bool{
-
-
         //cryptage mdp
     $mdp_crypte = sha1(sha1($mdp));
 
@@ -143,14 +141,10 @@ function selectLogMdp() : array{
         $stmt->execute();
         $userTab = $stmt->fetchAll();
         $_SESSION['connect'] = $userTab;
-        print_r($_SESSION['connect']);
         if(count($userTab) > 0)
             return true;
         else    
             return false;
-    
-
-       
     }
 
 
