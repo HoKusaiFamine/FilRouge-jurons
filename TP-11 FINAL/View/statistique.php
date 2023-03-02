@@ -19,7 +19,7 @@
     </div>
     partie centre()
     <div class="centre">
-      <a class="nosoulign" href="../View/home.html"><button class="btn-grad">Acceuil</button></a>
+      <a class="nosoulign" href="../View/home.php"><button class="btn-grad">Acceuil</button></a>
       <a class="nosoulign" href="../Controller/executeSignalement.php"><button class="btn-grad">Signalement</button></a>
       <a class="nosoulign" href="../Controller/executeHistorique.php"><button class="btn-grad">Historique</button></a>
       <a class="nosoulign" href="../View/statistique.php"><button class="btn-grad">Statistique</button></a>
@@ -42,8 +42,8 @@
     echo "la connexion a la bdd a echoué";
   }
   //requete pour avoir le prenom et les montants
-  $req = mysqli_query($con, "SELECT DISTINCT prenom from penalite NATURAL JOIN user NATURAL JOIN balance_injure;");
-  $req2 = mysqli_query($con, "SELECT SUM(prix) from penalite NATURAL JOIN user NATURAL JOIN balance_injure group by prenom;");
+  $req = mysqli_query($con, "SELECT DISTINCT prenom from penalite NATURAL JOIN user NATURAL JOIN balance_injure order by prenom;");
+  $req2 = mysqli_query($con, "SELECT SUM(prix) from penalite NATURAL JOIN user NATURAL JOIN balance_injure group by prenom order by prenom;");
   //boucle pour mettre les données dans un tableau
   foreach ($req as $data) {
     $prenom[] = $data['prenom'];

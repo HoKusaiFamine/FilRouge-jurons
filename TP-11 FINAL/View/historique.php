@@ -14,7 +14,7 @@
         <img src="assets/Logo-removebg-preview.png" class="img-fluid" >
     </div>
     <div class="centre">
-        <a class="nosoulign" href="../View/home.html"><button class="btn-grad">Acceuil</button></a>
+        <a class="nosoulign" href="../View/home.php"><button class="btn-grad">Acceuil</button></a>
         <a class="nosoulign" href="../Controller/executeSignalement.php"><button class="btn-grad">Signalement</button></a>
         <a class="nosoulign" href="../Controller/executeHistorique.php"><button class="btn-grad">Historique</button></a>
         <a class="nosoulign" href="../View/statistique.php"><button class="btn-grad">Statistique</button></a>

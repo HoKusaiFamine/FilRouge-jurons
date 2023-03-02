@@ -110,7 +110,7 @@ function retireInjures ($id_penalite) {
 }
 
 
-
+//***********************************************************
 
 function affichePenalite() : array{
 
@@ -129,6 +129,29 @@ function affichePenalite() : array{
     
     return $user;
     }
+
+//***********************************************************
+
+function recupPremier() : array{
+
+    $host = 'localhost';
+    $dbname = 'boîte_a_jurons';
+    $username = 'root';
+    $password = '';
+      
+    $dsn = "mysql:host=$host;dbname=$dbname"; 
+    // récupérer tous les utilisateurs
+    $sql = "SELECT prenom from penalite NATURAL JOIN user NATURAL JOIN balance_injure group by prenom order by SUM(prix) DESC LIMIT 3" ;
+    
+    $pdo = new PDO($dsn, $username, $password , array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $stmt = $pdo->query($sql);
+    $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+
+    return $user;
+    }
+
+
 
 
 ?>
