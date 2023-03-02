@@ -12,7 +12,7 @@ print_r($type );
 
 insertPenalite($prix,$type);
 session_start();
-$_SESSION['penalite'] = afficheHistorique();
+$_SESSION['penalite'] = affichePenalite();
 
 header('Location:../View/home.admin.php');
 ?>

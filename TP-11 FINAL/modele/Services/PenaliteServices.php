@@ -111,4 +111,24 @@ function retireInjures ($id_penalite) {
 
 
 
+
+function affichePenalite() : array{
+
+    $host = 'localhost';
+    $dbname = 'boîte_a_jurons';
+    $username = 'root';
+    $password = '';
+      
+    $dsn = "mysql:host=$host;dbname=$dbname"; 
+    // récupérer tous les utilisateurs
+    $sql = "SELECT * FROM penalite" ;
+    
+    $pdo = new PDO($dsn, $username, $password , array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $stmt = $pdo->query($sql);
+    $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $user;
+    }
+
+
 ?>
