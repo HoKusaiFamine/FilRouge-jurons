@@ -28,7 +28,7 @@
     <a class="nosoulign2" href="../Controller/executeDeco.php"><button class="btn-grad2">Deconnexion</button></a>
     </div>
   </header>
-<body>
+<body onload="insertPenalite()">
     
 <?php
 session_start();
@@ -37,7 +37,7 @@ session_start();
   <div class="card-body">
 
 
-    <form action="../Controller/executeBalance.php" method="post" class="form">
+    <form id="form" class="form">
       <!-- Choix du stagiaire -->
       <div class="btn-group">
         <label class="textorange text-light" for="id" class = "menu"></label>
@@ -87,7 +87,7 @@ session_start();
     </form>
   </div>
 </div>
-
-    
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="../View/js/callAjax.js"></script>
 </body>
 </html>

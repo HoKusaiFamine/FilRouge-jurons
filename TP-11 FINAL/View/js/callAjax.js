@@ -1,13 +1,21 @@
 
 
 function insertPenalite() {
-    $.ajax({
+    $('#form').bind('submit', function(){
+       $.ajax({
         type: "POST",
         url: "../controller/executeBalance.php",
-        data: "data",
-        dataType: "dataType",
+        data: $('form').serialize(),
         success: function (response) {
-            
+            if (response === 'ok') {
+                alert('sale balance ! ');
+                // location.href = "../View/historique.php";
+            }else {
+                alert('tant pis pour toi ! ');
+            }
         }
     });
+    return false; 
+    });
+    
 }
