@@ -152,3 +152,7 @@ body{
     border-radius: 15px;
     margin: 20px;
   }
+  .bordeur{
+    border-bottom: 1px black solid;
+    padding-bottom: 1em;
+  }
