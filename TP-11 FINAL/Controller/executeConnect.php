@@ -3,7 +3,7 @@ include('../modele/Services/DBManagement.php');
 include('../modele/Services/PenaliteServices.php');
 
 session_start();
-// // $_SESSION['user'] = selectLogMdp();
+
 $login = $_POST['loginConnect'];
 $mdp = $_POST['passwordConnect'];
 $_SESSION['premier'] = recupPremier();
@@ -21,7 +21,7 @@ if (controlLogin($login,$mdp)){
 }
 
 
-// controlLogin($login,$mdp);
+
 
 
 
