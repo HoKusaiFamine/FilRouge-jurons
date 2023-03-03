@@ -11,18 +11,18 @@
 </head>
 <header class="header">
     <div class="gauche">
-        <img src="assets/Logo-removebg-preview.png" class="img-fluid">
+        <img src="assets/Logo-removebg-preview.png" class="img-fluid" >
     </div>
     <div class="centre">
-        <a class="nosoulign" href="../View/home.php">Acceuil</a>
-        <a class="nosoulign" href="signalement.php">Signalement</a>
-        <a class="nosoulign" href="../Controller/executeHistorique.php">Historique</a>
-        <a class="nosoulign" href="statistique.php">Statistique</a>
+        <a class="nosoulign" href="../View/home.php"><button class="btn-grad">Acceuil</button></a>
+        <a class="nosoulign" href="../Controller/executeSignalement.php"><button class="btn-grad">Signalement</button></a>
+        <a class="nosoulign" href="../Controller/executeHistorique.php"><button class="btn-grad">Historique</button></a>
+        <a class="nosoulign" href="../View/statistique.php"><button class="btn-grad">Statistique</button></a>
     </div>
     <div class="droite">
-        <a class="nosoulign2" href="../Controller/executeDeco.php">deconnexion</a>
+    <a class="nosoulign2" href="../Controller/executeDeco.php"><button class="btn-grad2">Deconnexion</button></a>
     </div>
-</header>
+  </header>
 
 <body>
     <?php session_start() ?>
