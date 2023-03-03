@@ -13,6 +13,9 @@ $_SESSION['penalite'] = affichePenalite();
 
 
 
+
+
+
 if (controlLogin($login,$mdp)){
     header('location:../View/home.php');
     //  exit();

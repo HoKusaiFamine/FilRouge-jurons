@@ -111,7 +111,10 @@ body{
   }
  
   .posimage{
+    display: flex;
+    justify-content: center;
     margin-top: 5em;
+    padding-right: 3em;
   }
 
   .centrerLabel{

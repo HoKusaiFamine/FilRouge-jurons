@@ -143,7 +143,6 @@ function selectLogMdp() : array{
         $stmt->execute();
         $userTab = $stmt->fetchAll();
         $_SESSION['connect'] = $userTab;
-        print_r($_SESSION['connect']);
         if(count($userTab) > 0)
             return true;
         else    

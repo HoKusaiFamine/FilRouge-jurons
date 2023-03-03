@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/styleIndex.css" />
     <title>Home</title>
 </head>
-
+<?php session_start() ?>
 <header class="header">
     <div class="gauche">
         <img src="assets/Logo-removebg-preview.png" class="img-fluid" >
@@ -23,10 +23,16 @@
         <a class="nosoulign" href="../Controller/executeSignalement.php"><button class="btn-grad">Signalement</button></a>
         <a class="nosoulign" href="../Controller/executeHistorique.php"><button class="btn-grad">Historique</button></a>
         <a class="nosoulign" href="../View/statistique.php"><button class="btn-grad">Statistique</button></a>
+        <?php 
+        if ($_SESSION['connect'][0]['id_profil']==1) {
+            echo '<a class="nosoulign" href="../Controller/executeDelete.php"><button class="btn-grad">(ADMIN)</button></a>';
+        }
+?>
+        
   <!-- en config -->
-        <a class="nosoulign" href="home.admin.php"><form action="../Controller/executeDelete.php" method="post" class = "btn"> </a>
-            <button type="submit" name="stud_delete_multiple_btn" class="btn btn-danger">(ADMIN)<form action="../Controller/executeDelete.php" method="post" class = "btn"></form> </button>
-
+        <!-- <a class="nosoulign" href="home.admin.php"><form action="../Controller/executeDelete.php" method="post" class = "btn"> </a>
+            <button type="submit" name="stud_delete_multiple_btn" class="btn btn-danger">(ADMIN)<form action="../Controller/executeDelete.php" method="post" class = "btn"></form> </button> -->
+            <!-- print_r($_SESSION['connect'][0]['id_profil']); -->
     </div>
     <div class="droite">
     <a class="nosoulign2" href="../Controller/executeDeco.php"><button class="btn-grad2">Deconnexion</button></a>
@@ -34,7 +40,7 @@
   </header>
 
 <body>
-<?php session_start() ?>
+
 <div>
     <img src="../View/img/podium-removebg-preview.png" alt="podium" class="center posimage" ></body>
 </div>
@@ -56,7 +62,7 @@
             </div>
         </div>
     </div>
-
+    
       
 </body>
 </html>
