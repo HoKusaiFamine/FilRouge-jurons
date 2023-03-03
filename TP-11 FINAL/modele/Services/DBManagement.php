@@ -263,4 +263,19 @@ function insertInjure($prix,$type): bool
     return $update;
 }
 
+function updateInjure($id_penalite,$prix,$type): bool
+{
+    $host = 'localhost';
+    $dbname = 'boîte_a_jurons';
+    $username = 'root';
+    $password = '';
+    $dsn = "mysql:host=$host;dbname=$dbname";
+    // modification des données
+   
+    $sql = "UPDATE penalite SET  prix ='$prix', type='$type' WHERE id_penalite='$id_penalite'";
+    $pdo = new PDO($dsn, $username, $password);
+    $stmt = $pdo->prepare($sql);
+    $update = $stmt->execute();
+    return $update;
+}
 ?>

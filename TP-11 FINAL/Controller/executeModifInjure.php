@@ -4,12 +4,13 @@ $id_penalite = $_POST['id_penalite'];
 $prix = $_POST['prix'];
 $type = $_POST['type'];
 
-// $login = 'pp';
-// $nom = 'hdhdhdh';
-// $prenom = 'jdjdjdjd';
-// $mail = 'dede@jejeje.com';
+
+// $id_penalite = 13;
+// $prix = 55;
+// $type = "fefe";
+
 updateInjure($id_penalite,$prix,$type);
-session_start();
+
 $_SESSION['user'] = selectStagiaire();
 header('Location:../View/home.admin.php');
 ?>
