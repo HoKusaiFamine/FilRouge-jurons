@@ -1,5 +1,7 @@
 <?php
 include "../modele/Services/DBManagement.php";
+include "../modele/Services/PenaliteServices.php";
+
 $id_penalite = $_POST['id_penalite'];
 $prix = $_POST['prix_M'];
 $type = $_POST['type_M'];
@@ -10,7 +12,7 @@ $type = $_POST['type_M'];
 // $type = "fefe";
 
 updateInjure($id_penalite,$prix,$type);
-session_start();
+
 $_SESSION['penalite'] = affichePenalite();
 header('Location:../View/home.admin.php');
 ?>
