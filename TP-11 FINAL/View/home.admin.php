@@ -152,9 +152,9 @@
                                 </tr>
                                 <?php for ($i = 0; $i < count($_SESSION['penalite']); $i++) {
                                     echo '<tr class="">';
-                                    echo '<td class="bg-info-subtle text-dark rounded-start-2 opacity-75">' . $_SESSION['penalite'][$i]['id_penalite'] . '</td>';
-                                    echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['penalite'][$i]['prix'] . '</td>';
-                                    echo '<td class="bg-info-subtle text-dark opacity-75">' . $_SESSION['penalite'][$i]['type'] . '</td>';
+                                    echo '<td >' . $_SESSION['penalite'][$i]['id_penalite'] . '</td>';
+                                    echo '<td >' . $_SESSION['penalite'][$i]['prix'] . '</td>';
+                                    echo '<td >' . $_SESSION['penalite'][$i]['type'] . '</td>';
                                     echo '</tr>';
                                 }
                                 ?>
