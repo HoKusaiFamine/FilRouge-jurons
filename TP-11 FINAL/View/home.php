@@ -46,19 +46,35 @@
 </div>
 <div>
         <?php
-        $premier = $_SESSION['premier'][0]['prenom'];
-        $deuxieme = $_SESSION['premier'][1]['prenom'];
-        $troisieme = $_SESSION['premier'][2]['prenom'];
+        
         ?>
         <div class="centrerLabel">
             <div class="sizelabel2">
-                <?php echo "$deuxieme" ?>
+                <?php
+                if (count($_SESSION['premier'])>1) {
+                    $deuxieme = $_SESSION['premier'][1]['prenom'];
+                    echo "$deuxieme";
+                }
+                    ?>
             </div>
             <div class="sizelabel1">
-                <?php echo "$premier" ?>
+            <?php
+                if (count($_SESSION['premier'])>0) {
+                    $premier = $_SESSION['premier'][0]['prenom'];
+                    echo "$premier";
+                }
+                    ?>
             </div>
             <div class="sizelabel3">
-                <?php echo "$troisieme" ?>
+            <?php
+                if (count($_SESSION['premier'])>2) {
+                    $troisieme = $_SESSION['premier'][2]['prenom'];
+                    echo "$troisieme";
+                }else{
+                    echo "";
+                }
+                    ?>
+                
             </div>
         </div>
     </div>
