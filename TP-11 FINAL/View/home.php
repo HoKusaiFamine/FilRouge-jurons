@@ -32,7 +32,7 @@
         <!-- affichage du bouton admin selon le profil  -->
         <?php
         if ($_SESSION['connect'][0]['id_profil'] == 1) {
-            echo '<a class="nosoulign" href="../Controller/executeDelete.php"><button class="btn-grad">(ADMIN)</button></a>';
+            echo '<a class="nosoulign" href="../Controller/executeDelete.php" href="../Controller/executeSignalement.php"><button class="btn-grad">(ADMIN)</button></a>';
         }
         ?>
     </div>

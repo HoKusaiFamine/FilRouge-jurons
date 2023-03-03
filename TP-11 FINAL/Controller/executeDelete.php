@@ -2,6 +2,7 @@
 
 include "../modele/Services/DBManagement.php";
 session_start();
+$_SESSION['stag'] = selectStagiaires();
 $status2 = deleteBalanceInjure($_POST['id_user']);
 $status = deleteStagiaire($_POST['id_user']);
 

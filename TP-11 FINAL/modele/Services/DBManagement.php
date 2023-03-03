@@ -37,7 +37,7 @@ $password = '';
   
 $dsn = "mysql:host=$host;dbname=$dbname"; 
 // récupérer tous les utilisateurs
-$sql = "SELECT id_user,nom,prenom FROM user";
+$sql = "SELECT id_user,nom,prenom  FROM user";
 
 $pdo = new PDO($dsn, $username, $password);
 $stmt = $pdo->query($sql);
@@ -134,17 +134,15 @@ function selectLogMdp() : array{
 
     function controlLogin($login, $mdp) : bool{
 
-
         //cryptage mdp
     $mdp_crypte = sha1(sha1($mdp));
-
-        $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
-        $stmt= $pdo->prepare("SELECT login,mdp, id_user, id_profil, prenom  FROM user WHERE login = '$login' and mdp = '$mdp_crypte' ");
-        $stmt->execute();
-        $userTab = $stmt->fetchAll();
-        $_SESSION['connect'] = $userTab;
-        if(count($userTab) > 0)
-            return true;
+    $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
+    $stmt= $pdo->prepare("SELECT login,mdp, id_user, id_profil, prenom  FROM user WHERE login = '$login' and mdp = '$mdp_crypte' ");
+    $stmt->execute();
+    $userTab = $stmt->fetchAll();
+    $_SESSION['connect'] = $userTab;
+    if(count($userTab) > 0)
+        return true;
         else    
             return false;
     }
@@ -160,8 +158,7 @@ function selectLogMdp() : array{
             $sql = "DELETE FROM user WHERE id_user ='$id_user'";
             $stmt = $bdd->prepare($sql);
             $status = $stmt->execute();
-        }
-        
+        }       
         return $status;
     }
     
@@ -192,7 +189,7 @@ function afficheHistorique() : array{
       
     $dsn = "mysql:host=$host;dbname=$dbname"; 
     // récupérer tous les utilisateurs
-    $sql = "SELECT * FROM historique NATURAL JOIN user NATURAL JOIN penalite  ORDER BY date DESC" ;
+    $sql = "SELECT * FROM historique NATURAL JOIN user NATURAL JOIN penalite  ORDER BY date DESC LIMIT 50" ;
     
     $pdo = new PDO($dsn, $username, $password , array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $stmt = $pdo->query($sql);
@@ -270,12 +267,22 @@ function updateInjure($id_penalite,$prix,$type): bool
     $username = 'root';
     $password = '';
     $dsn = "mysql:host=$host;dbname=$dbname";
-    // modification des données
-   
+    // modification des données 
     $sql = "UPDATE penalite SET  prix ='$prix', type='$type' WHERE id_penalite='$id_penalite'";
     $pdo = new PDO($dsn, $username, $password);
     $stmt = $pdo->prepare($sql);
     $update = $stmt->execute();
     return $update;
 }
-?>
+
+function deletedette($id_user)
+{
+    $bdd = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $status = false;  
+    $sql = "DELETE FROM balance_injure   WHERE id_user ='$id_user'";
+    $stmt = $bdd->prepare($sql);
+    $status = $stmt->execute();
+    
+    
+    return $status;
+}
