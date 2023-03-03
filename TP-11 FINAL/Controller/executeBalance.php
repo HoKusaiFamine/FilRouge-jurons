@@ -23,7 +23,8 @@ $idUser = $rep2[0]['id_user'];
 $quantite = $_REQUEST['Quantite'];
 
 for ($i=1; $i <= $quantite ; $i++) { 
-    $status = balancePenalite($id_pena,$idUser,$date,$id_balance);   
+    $status = balancePenalite($id_pena,$idUser,$date,$id_balance); 
+    balancePenalitehisto($id_pena,$idUser,$date,$id_balance);   
 }
 
 if ($status) {

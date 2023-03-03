@@ -192,7 +192,7 @@ function afficheHistorique() : array{
       
     $dsn = "mysql:host=$host;dbname=$dbname"; 
     // récupérer tous les utilisateurs
-    $sql = "SELECT * FROM balance_injure NATURAL JOIN user NATURAL JOIN penalite  ORDER BY date DESC" ;
+    $sql = "SELECT * FROM historique NATURAL JOIN user NATURAL JOIN penalite  ORDER BY date DESC" ;
     
     $pdo = new PDO($dsn, $username, $password , array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $stmt = $pdo->query($sql);
