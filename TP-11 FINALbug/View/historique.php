@@ -11,7 +11,7 @@
 </head>
 <header class="header">
     <div class="gauche">
-        <img src="assets/Logo-removebg-preview.png" class="img-fluid" >
+        <img src="assets/Logo-removebg-preview.png" class="img-fluid">
     </div>
     <div class="centre">
         <a class="nosoulign" href="../View/home.php"><button class="btn-grad">Acceuil</button></a>
@@ -20,9 +20,9 @@
         <a class="nosoulign" href="../View/statistique.php"><button class="btn-grad">Statistique</button></a>
     </div>
     <div class="droite">
-    <a class="nosoulign2" href="../Controller/executeDeco.php"><button class="btn-grad2">Deconnexion</button></a>
+        <a class="nosoulign2" href="../Controller/executeDeco.php"><button class="btn-grad2">Deconnexion</button></a>
     </div>
-  </header>
+</header>
 
 <body>
     <?php session_start() ?>
@@ -57,7 +57,11 @@
                                 ?>
                             </table>
                         </div>
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </thead>
 </body>
 
 </html>

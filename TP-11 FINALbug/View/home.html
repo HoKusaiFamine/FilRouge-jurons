@@ -13,19 +13,18 @@
     <link rel="stylesheet" type="text/css" href="CSS/styleIndex.css" />
     <title>Home</title>
 </head>
-
 <header class="header">
     <div class="gauche">
         <img src="assets/Logo-removebg-preview.png" class="img-fluid" >
     </div>
     <div class="centre">
-        <a class="nosoulign" href="../View/home.php"><button class="btn-grad">Acceuil</button></a>
+        <a class="nosoulign" href="../View/home.html"><button class="btn-grad">Acceuil</button></a>
         <a class="nosoulign" href="../Controller/executeSignalement.php"><button class="btn-grad">Signalement</button></a>
         <a class="nosoulign" href="../Controller/executeHistorique.php"><button class="btn-grad">Historique</button></a>
         <a class="nosoulign" href="../View/statistique.php"><button class="btn-grad">Statistique</button></a>
   <!-- en config -->
         <a class="nosoulign" href="home.admin.php"><form action="../Controller/executeDelete.php" method="post" class = "btn"> </a>
-            <button type="submit" name="stud_delete_multiple_btn" class="btn btn-danger">(ADMIN)<form action="../Controller/executeDelete.php" method="post" class = "btn"></form> </button>
+            <button type="submit" name="stud_delete_multiple_btn" class="btn btn-danger">(ADMIN)<form action="../Controller/executeDelete.php" method="post" class = "btn"> </button>
 
     </div>
     <div class="droite">
@@ -34,19 +33,8 @@
   </header>
 
 <body>
-<?php session_start() ?>
-<div>
-    <img src="../View/img/podium-removebg-preview.png" alt="podium" class="center posimage" ></body>
-</div>
-<div>
-    <p>
-        <?php 
-            $prems = $_SESSION['premier'][1]['prenom']; 
-            echo "$prems"; 
-        ?> 
-    </p>
-</div>
 
+    <img src="../View/img/podium.png" alt="podium" class="center" ></body>
       
 </body>
 </html>

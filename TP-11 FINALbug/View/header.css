@@ -1,0 +1,29 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 17px;
+    overflow: hidden;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
+         rgba(21,22,22,0.4234068627450981) 60%, rgba(219,232,235,1) 100%);
+}
+li {
+    float: left;
+}
+li a {
+    margin-left: 1em;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 45px;  
+}
+.deco {
+    background-color: red;
+    font-size: 50px;
+}
+
+.img-fluid{
+    height: 135px;
+}
+
