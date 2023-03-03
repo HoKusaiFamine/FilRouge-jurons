@@ -147,9 +147,6 @@ function selectLogMdp() : array{
             return true;
         else    
             return false;
-    
-
-       
     }
 
 
@@ -221,7 +218,6 @@ if(count($userTab) < 1)
     return true;
 else    
     return false;
-  
 }
 
 function updateUser($login,$nom,$prenom,$mail): bool

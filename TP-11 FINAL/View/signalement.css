@@ -27,10 +27,12 @@ li {
 }
 
 .menu {
-    background-color: gray;
-    color : white;
+    background-color: rgb(127, 126, 126);
+    background-image: linear-gradient(to right , #7b4397 0%, #dc2430  100%) ;
+    color : #ffffff;
     border-radius: 5px;
-
+    padding: 10px;
+    font-size: large;
 }
 
 .form{
@@ -40,8 +42,8 @@ li {
     display: flex;
     flex-direction: column;
     align-items:center ;
-    padding-top: 15%;
-    padding-bottom: 13%;
+    padding-top: 8%;
+    padding-bottom: 8%;
     
     
 }
