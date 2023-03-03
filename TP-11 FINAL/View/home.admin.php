@@ -110,13 +110,13 @@
                                 <div class="d-flex justify-content-center mb-3">
                                     <!-- <form role="form" method="POST" action="../Controller/executeUpdate.php"> -->
                                         <label class="text-black me-2">LOGIN</label>
-                                        <input type="login" class="me-5" name="login"required>
+                                        <input type="login" class="me-5" name="login">
                                         <label class="text-black me-2">NOM</label>
-                                        <input type="nom" class="me-5" name="nom"required>
+                                        <input type="nom" class="me-5" name="nom">
                                         <label class="text-black me-2">PRENOM</label>
-                                        <input type="prenom" class="me-5" name="prenom"required>
+                                        <input type="prenom" class="me-5" name="prenom">
                                         <label class="text-black me-2">MAIL</label>
-                                        <input type="mail" class="me-5" name="mail"required>
+                                        <input type="mail" class="me-5" name="mail">
                                 </div>
                                 <div class="d-flex justify-content-center justify-content-around mb-3">
                                     <input type="submit" name="submit" class="btn btn-success" value="Update">
@@ -170,25 +170,8 @@
                                 <div class="d-flex justify-content-center justify-content-around mb-3">
                                     <input type="submit" name="submit" class="btn btn-success" value="Update">
                                     <a href="../View/home.admin.php" class="btn btn-danger">Annuler </a>
-                                    
-                                   
-                                </div>
-                                <div class="d-flex justify-content-center mb-3">
-                                    <form role="form" method="POST" action="../Controller/excuteModIfInjure.php">
-                                        
-                                        <label class="text-black me-2">ID_PENALIE</label>
-                                        <input type="id_penalite" class="me-5" name="id_penalite"required>
-                                        <p>Modifier/  </p></br>
-                                        <label class="text-black me-2">  PRIX</label>
-                                        <input type="prix" class="me-5" name="prix">
-                                        <p>et/ou Modifier/  </p></br>
-                                        <label class="text-black me-2">  TYPE</label>
-                                        <input type="type" class="me-5" name="type">
-                                </div>
-                                <div class="d-flex justify-content-center justify-content-around mb-3">
-                                    <input type="submit" name="submit" class="btn btn-success" value="Update">
-                                    <a href="../View/home.admin.php" class="btn btn-danger">Annuler </a>
                                     </form>
+                                </div>
                             </tbody>
                        
                   

@@ -192,7 +192,7 @@ function afficheHistorique() : array{
       
     $dsn = "mysql:host=$host;dbname=$dbname"; 
     // récupérer tous les utilisateurs
-    $sql = "SELECT * FROM balance_injure NATURAL JOIN user NATURAL JOIN penalite  ORDER BY date DESC " ;
+    $sql = "SELECT * FROM balance_injure NATURAL JOIN user NATURAL JOIN penalite  ORDER BY date DESC" ;
     
     $pdo = new PDO($dsn, $username, $password , array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $stmt = $pdo->query($sql);
@@ -235,13 +235,11 @@ function updateUser($login,$nom,$prenom,$mail): bool
     $update = $stmt->execute();
     return $update;
 }
-
 function deleteBalanceInjure($liste): bool
 {
     $bdd = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $status = false;
     foreach ($liste as $id_user) {
-
         $sql = "DELETE FROM balance_injure WHERE id_user ='$id_user'";
         $stmt = $bdd->prepare($sql);
         $status = $stmt->execute();
@@ -249,7 +247,6 @@ function deleteBalanceInjure($liste): bool
     
     return $status;
 }
-
 function insertInjure($prix,$type): bool
 {
     $host = 'localhost';
@@ -266,37 +263,4 @@ function insertInjure($prix,$type): bool
     return $update;
 }
 
-function updateNameBalanceInjure($login,$nom,$prenom,$mail): bool
-{
-    $host = 'localhost';
-    $dbname = 'boîte_a_jurons';
-    $username = 'root';
-    $password = '';
-    $dsn = "mysql:host=$host;dbname=$dbname";
-
-    $nom = "???";
-    // modification des données
-   
-    $sql = "UPDATE balance_injure SET  nom ='$nom' prenom = '$prenom' mail = '$mail' WHERE login='$login'";
-    $pdo = new PDO($dsn, $username, $password);
-    $stmt = $pdo->prepare($sql);
-    $update = $stmt->execute();
-    return $update;
-}
-
-function updateInjure($id_penalite,$prix,$type): bool
-{
-    $host = 'localhost';
-    $dbname = 'boîte_a_jurons';
-    $username = 'root';
-    $password = '';
-    $dsn = "mysql:host=$host;dbname=$dbname";
-    // modification des données
-   
-    $sql = "UPDATE penalité SET  prix ='$prix', type='$type' WHERE id_penalite='$id_penalite'";
-    $pdo = new PDO($dsn, $username, $password);
-    $stmt = $pdo->prepare($sql);
-    $update = $stmt->execute();
-    return $update;
-}
 ?>

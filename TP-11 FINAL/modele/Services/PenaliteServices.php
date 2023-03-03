@@ -154,6 +154,4 @@ function recupPremier() : array{
 
 
 
-
-
 ?>
