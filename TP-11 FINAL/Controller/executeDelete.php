@@ -1,7 +1,19 @@
 <?php
 
 include "../modele/Services/DBManagement.php";
-session_start();
+
+
+// $login = $_POST['login'];
+// $nom = '???';
+// $prenom = "???";
+// $mail = "???";
+
+// $status3 = updateNameBalanceInjure($_POST['id_user']);
+
+// session_start();
+
+
+// $status3 = updateNameBalanceInjure($_POST['id_user']);
 $status2 = deleteBalanceInjure($_POST['id_user']);
 $status = deleteStagiaire($_POST['id_user']);
 
