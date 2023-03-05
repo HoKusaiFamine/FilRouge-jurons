@@ -11,7 +11,7 @@ function insertPenalite() {
                 alert('sale balance ! ');
                 // location.href = "../View/historique.php";
             }else {
-                alert('tant pis pour toi ! ');
+                alert('sale balance ! ');
             }
         }
     });

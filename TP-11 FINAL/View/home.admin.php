@@ -45,10 +45,10 @@
                             <form role="form" method="POST" action="../Controller/executePayer.php">
                                 <div class="btn-group">
                                     <label class="textorange text-light" for="id_user" class="menu"></label>
-                                    <select id='id_user' name='id_user' class="menu">
+                                    <select id='prenom' name='prenom' class="menu">
                                         <option selected>Choisir un prenom </option>
                                         <?php for ($i = 0; $i < count($_SESSION['stag']); $i++) { ?>
-                                            <option value='<?= $_SESSION['stag'][$i]['id_user'] ?>'><?= $_SESSION['stag'][$i]['id_user'] ?></option>';
+                                            <option value='<?= $_SESSION['stag'][$i]['prenom'] ?>'><?= $_SESSION['stag'][$i]['prenom'] ?></option>';
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -62,15 +62,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
 
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -171,9 +162,6 @@
                 </div>
             </div>
         </div>
-
-
-
         <div class>
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -215,10 +203,7 @@
                                         <a href="../View/home.admin.php" class="btn btn-danger">Annuler </a>
                             </form>
                         </div>
-
                         </tbody>
-
-
                         <tbody2 class="">
                             <div class="d-flex justify-content-center mb-3">
                                 <form role="form" method="POST" action="../Controller/executeModifInjure.php">

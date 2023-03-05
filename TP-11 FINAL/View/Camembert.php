@@ -81,4 +81,3 @@ foreach ($element as $libelle=>$quantite)
 }
  imagepng($courbe);
  imagedestroy($courbe);
-?>

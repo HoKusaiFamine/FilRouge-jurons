@@ -46,12 +46,7 @@ $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 return $user;
 }
 
-
-
 //***********************************************************
-
-
-
 
 function afficheStagiaires() : array{
 
@@ -71,8 +66,6 @@ function afficheStagiaires() : array{
     return $user;
     }
 
-
-
 //***********************************************************
 
 
@@ -85,8 +78,6 @@ function updateStagiaires(string $nom, string $prenom, int $place) : void  {
     echo $nb_modifs . ' entrées ont été modifiées !';
 
 }
-
-
 
 
 //***********************************************************
@@ -137,7 +128,7 @@ function selectLogMdp() : array{
         //cryptage mdp
     $mdp_crypte = sha1(sha1($mdp));
     $pdo = new PDO('mysql:host=localhost;dbname=boîte_a_jurons;charset=utf8mb4', 'root', '');
-    $stmt= $pdo->prepare("SELECT login,mdp, id_user, id_profil, prenom  FROM user WHERE login = '$login' and mdp = '$mdp_crypte' ");
+    $stmt= $pdo->prepare("SELECT *  FROM user WHERE login = '$login' and mdp = '$mdp_crypte' ");
     $stmt->execute();
     $userTab = $stmt->fetchAll();
     $_SESSION['connect'] = $userTab;
@@ -146,8 +137,6 @@ function selectLogMdp() : array{
         else    
             return false;
     }
-
-
     /// fonction delete jb
 
     function deleteStagiaire($liste): bool
@@ -287,36 +276,8 @@ function deletedette($id_user)
     return $status;
 }
 
-// function envoiMail($mail) :bool 
-// {
-//     $to = $mail;
-//     $subject = "On t'a chopé";
-//     $headers = "From: lbclbc59000@gmail.com \r\n";
-//     $headers .= "Mime-version: 1.0\r\n";
-//     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-//     $message = "<html><body style='margin: 0'>";
-//     $message .= "<div style='text-align: center><img height='200' width='auto' src='https://zupimages.net/up/23/09/bioa.png' alt='Logo-removebg-preview'/></div>"; 
-//     $message .= "<h3 style= 'text-align:center; font-family: sans-serif;'>" . "t'as balance</h3>";
-//     $message .= "<div><p style='text-align: center; font-family: sans-serif; font: bold;'>".
-//         "Type d'infraction :" ."</p><br/>".
-//         "<p style='text-align: center; font-family: sans-serif;'>".
-//         "En cas d'erreur , veuillez renvoyer un mail .</p><br />" .
-//         "<p style= 'text-align:center; font-family: sans-serif;'>".
-//         "cordialement, <br/>";
-//         "Boite a jurons</p></div>";
-
-//     $message .= "<footer style='background-color: #673ab7;'>" .
-//         "<h6 style= 'text-align: center; font-family: sans-serif; color:white'>".
-//         "@ Copyright : Thomas/GREG/JB tout droit reservé</h6></footer>";
-//     $message .= "</body></html>";
-
-//     return mail($to, $subject, $message, $headers);
-
-
-// }
-
-function selectMail($prenomMail) : array{
+function selectMail($nomB) : array{
 
     $host = 'localhost';
     $dbname = 'boîte_a_jurons';
@@ -325,7 +286,7 @@ function selectMail($prenomMail) : array{
       
     $dsn = "mysql:host=$host;dbname=$dbname"; 
     // récupérer tous les utilisateurs
-    $sql = "SELECT mail FROM user WHERE prenom = '$prenomMail'";
+    $sql = "SELECT mail FROM user WHERE prenom = '$nomB'";
     
     $pdo = new PDO($dsn, $username, $password);
     $stmt = $pdo->query($sql);
@@ -362,32 +323,3 @@ function selectNom($id_userB): array
     $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $array;
 }
-
-// function envoiMail($mail, $nom, $prenom, $type) :bool 
-// {
-//     $to = $mail;
-//     $subject = "On t'a chopé";
-//     $headers = "From: lbclbc59000@gmail.com \r\n";
-//     $headers .= "Mime-version: 1.0\r\n";
-//     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-//     $message = "<html><body style='margin: 0'>";
-//     $message .= "<div style='text-align: center><img height='200' width='auto' src='https://zupimages.net/up/23/09/bioa.png' alt='Logo-removebg-preview'/></div>"; 
-//     $message .= "<h3 style= 'text-align:center; font-family: sans-serif;'>" .strtoupper($nom). ' ' . ucfirst($prenom) . "t'as balance</h3>";
-//     $message .= "<div><p style='text-align: center; font-family: sans-serif; font: bold;'>".
-//         "Type d'infraction :". $type ."</p><br/>".
-//         "<p style='text-align: center; font-family: sans-serif;'>".
-//         "En cas d'erreur , veuillez renvoyer un mail .</p><br />" .
-//         "<p style= 'text-align:center; font-family: sans-serif;'>".
-//         "cordialement, <br/>";
-//         "Boite a jurons</p></div>";
-
-//     $message .= "<footer style='background-color: #673ab7;'>" .
-//         "<h6 style= 'text-align: center; font-family: sans-serif; color:white'>".
-//         "@ Copyright : Thomas/GREG/JB tout droit reservé</h6></footer>";
-//     $message .= "</body></html>";
-
-//     return mail($to, $subject, $message, $headers);
-
-
-// }

@@ -35,9 +35,7 @@ session_start();
 ?>
 <div class="card" style="width: 40rem;height: 30rem">
   <div class="card-body">
-
-
-    <form id="form" class="form">
+    <form id="form" class="form" action="post">
       <!-- Choix du stagiaire -->
       <div class="btn-group">
         <label class="textorange text-light" for="id" class = "menu"></label>
@@ -48,10 +46,7 @@ session_start();
             <?php }?>
           </select>
       </div>
-
-
       <!-- CHOIX DE LA PENALITE-->
-
       <div class="btn-group">
         <label class="textorange text-light" for="penalite" class = "menu"></label>
           <select  id='penalite' name ='penalite' class = "menu">
@@ -61,7 +56,6 @@ session_start();
             <?php }?>
           </select>
       </div>
-
 
       <!-- NOMBRE-->
 

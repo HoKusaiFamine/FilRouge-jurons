@@ -4,28 +4,20 @@ include('../modele/Services/PenaliteServices.php');
 
 session_start();
 
+//recuperation login et mdp 
 $login = $_POST['loginConnect'];
 $mdp = $_POST['passwordConnect'];
+//recuperation des trois 1er en cour et des penalite
 $_SESSION['premier'] = recupPremier();
-// $login = "thomas";
-// $mdp = "1245";
 $_SESSION['penalite'] = affichePenalite();
 
-
-
-
-
-
-if (controlLogin($login,$mdp)){
+//controle d existance de l utilisateur dans la bdd mdp + login 
+if (controlLogin($login,$mdp))
+{
     header('location:../View/home.php');
-    //  exit();
 }else {
     header('location:../View/index.php');
 }
-
-
-
-
 
 
 ?>
